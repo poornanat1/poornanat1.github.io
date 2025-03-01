@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Poorna Natarajan | Experience Highlights</title>
+
+  <!-- Fun, modern fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@600;700&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100vh;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* STATIC BACKGROUND GRADIENT */
+    body {
+      background: linear-gradient(-45deg, #ff6fcf, #5074fa, #805ade, #d944f7);
+    }
+
+    /* CONTAINER */
+    .container {
+      margin: 0 auto;
+      max-width: 1000px;
+      padding: 2rem 1rem;
+    }
+
+    /****************************************************
+      HEADER
+    *****************************************************/
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 0.7rem;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      margin-bottom: 0.3rem;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /****************************************************
+      ABOUT SECTION
+    *****************************************************/
+    .about-section {
+      text-align: center;
+      border-radius: 12px;
+      padding: 2rem 1rem;
+      background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      backdrop-filter: blur(6px);
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .about-section p {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    .highlight {
+      font-weight: 600;
+      text-decoration: underline;
+    }
+
+    /****************************************************
+      EXPERIENCE SECTION
+    *****************************************************/
+    .experience-section {
+      margin-bottom: 3rem;
+    }
+
+    .experience-section h2 {
+      text-align: center;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Each role as a card */
+    .role-card {
+      background: linear-gradient(270deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      backdrop-filter: blur(5px);
+      border-radius: 12px;
+      padding: 1.5rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .role-header {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .role-header h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .role-header .role-dates {
+      font-size: 0.9rem;
+      opacity: 0.85;
+      margin-bottom: 0.5rem;
+    }
+
+    .role-card ul {
+      list-style-type: none;
+      margin-left: 0;
+    }
+
+    .role-card li {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 0.8rem;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .role-card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #ffd86f;
+      font-size: 1.2rem;
+      text-shadow: 0 0 6px rgba(255,216,111,0.8);
+    }
+
+    .skills-used {
+      margin-top: 0.8rem;
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .skills-used span {
+      background: rgba(255,255,255,0.1);
+      padding: 0.3rem 0.6rem;
+      border-radius: 15px;
+      margin-right: 0.4rem;
+      margin-bottom: 0.3rem;
+      display: inline-block;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: background 0.2s;
+      cursor: default;
+    }
+
+    .skills-used span:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /****************************************************
+      EDUCATION SECTION
+    *****************************************************/
+    .education-section {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding: 2rem 1rem;
+      border-radius: 12px;
+      background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
+      backdrop-filter: blur(4px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    }
+
+    .education-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .school-info {
+      max-width: 700px;
+      margin: 0 auto 1rem auto;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+
+    .school-info strong {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    /****************************************************
+      FOOTER
+    *****************************************************/
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      opacity: 0.8;
+      padding-bottom: 1rem;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- HEADER -->
+    <header>
+      <h1>Poorna Natarajan</h1>
+
+      <p><a href="mailto:pnat614@gmail.com">pnat614@gmail.com</a> • 240-620-9240</p>
+    </header>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section">
+      <h2>About Me</h2>
+      <p>
+        I'm an AI/ML engineer who has built <span class="highlight">real-time containerized solutions</span>,
+        orchestrated <span class="highlight">large-scale LLM workflows</span>, and
+        secured critical government contracts at Palantir, SMX, and Deloitte.
+        I supercharge deployments and explore boundaries of AI for real impact.
+      </p>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section class="experience-section">
+      <h2>HIGHLIGHTS</h2>
+
+      <!-- Palantir (3 bullets) -->
+      <div class="role-card">
+        <div class="role-header">
+          <h3>Palantir Technologies | Deployment Strategist</h3>
+          <div class="role-dates">March 2024 - February 2025</div>
+        </div>
+        <ul>
+          <li>Designed and developed k-LLM workflows using TypeScript and PySpark, reducing Palantir software deployment time by half, and secured two separate Air Force contracts.</li>
+          <li>Developed a 0 → 1 platform leveraging vector embeddings (ADA 002) and LLMs (GPT4o, Llama 3), reducing civilian job classification cycles from four months to &lt; one hour, scaling it across the Air Force.</li>
+          <li>Developed a real-time containerized computer vision model in Java to detect drones from live video feeds, serving real-time sensor-to-shooter applications.</li>
+        </ul>
+        <div class="skills-used">
+          <span>TypeScript</span>
+          <span>PySpark</span>
+          <span>GPT-4o</span>
+          <span>Llama 3</span>
+          <span>Java</span>
+          <span>Docker</span>
+          <span>Computer Vision</span>
+        </div>
+      </div>
+
+      <!-- SMX (3 bullets) -->
+      <div class="role-card">
+        <div class="role-header">
+          <h3>SMX | Machine Learning Engineer</h3>
+          <div class="role-dates">March 2022 - February 2024</div>
+        </div>
+        <ul>
+          <li>Orchestrated ingestion of multiple unstructured data sources with Apache Airflow, streamlining data transformations and increasing throughput.</li>
+          <li>Containerized serverless functions for automated metadata tagging; fine-tuned Claude 3 and GPT-3.5 on Amazon Bedrock for summarization, multilingual translation, and entity extraction.</li>
+          <li>Led a team of nine interns on topic modeling research, culminating in a presentation to C-level execs.</li>
+        </ul>
+        <div class="skills-used">
+          <span>Airflow</span>
+          <span>Python</span>
+          <span>Claude 3</span>
+          <span>GPT-3.5</span>
+          <span>Bedrock</span>
+          <span>Docker</span>
+          <span>Kubernetes</span>
+          <span>AWS</span>
+          <span>FlairNLP</span>
+          <span>Redshift</span>
+          <span>DynamoDB</span>
+          <span>S3</span>
+        </div>
+      </div>
+
+      <!-- Deloitte (3 bullets) -->
+      <div class="role-card">
+        <div class="role-header">
+          <h3>Deloitte | Senior Consultant</h3>
+          <div class="role-dates">June 2019 - March 2022</div>
+        </div>
+        <ul>
+          <li>Developed a data visualization platform using Databricks for satellite imagery, securing a key Air Force contract.</li>
+          <li>Drove data ingestion and analytics for COVID-19 emergency operations, providing real-time testing data to top government stakeholders.</li>
+          <li>Co-led a 200+ member Spark Community of Practice, developing accelerators for data science teams and partnering with Databricks for internal upskilling.</li>
+        </ul>
+        <div class="skills-used">
+          <span>Databricks</span>
+          <span>Spark</span>
+          <span>SQL</span>
+          <span>AWS</span>
+          <span>Python</span>
+          <span>Data Viz</span>
+          <span>Community Building</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section class="education-section">
+      <h2>Education</h2>
+      <div class="school-info">
+        <strong>Georgia Institute of Technology (2023 - Expected 2025)</strong>
+        Master of Science, Computer Science<br>
+        Focus on Machine Learning/Computer Vision
+      </div>
+
+      <div class="school-info">
+        <strong>University of Maryland - College Park</strong>
+        B.S. Bioengineering & B.A. Economics
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>Thank you for visiting!
+        Connect via <a href="mailto:pnat614@gmail.com">email</a>.
+      </p>
+    </footer>
+  </div>
+</body>
+</html>
