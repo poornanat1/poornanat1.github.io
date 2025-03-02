@@ -284,6 +284,21 @@
     }
 
     /****************************************************
+      Mobile Override for Profile Photo
+    *****************************************************/
+
+    @media (max-width: 700px) {
+      .intro-section img {
+        position: static !important;
+        left: auto !important;
+        top: auto !important;
+        transform: none !important;
+        display: block !important;
+        margin: 0 auto 1rem !important;
+      }
+    }
+
+    /****************************************************
       SKILLS SECTION
     *****************************************************/
     .skills-section {
@@ -377,51 +392,47 @@
       <!-- MAIN CONTENT -->
       <main class="main-content">
         <!-- INTRO (centered) -->
-<!-- INTRO (centered text, profile photo to the left) -->
-<section class="intro-section" style="position: relative; text-align: center; padding: 2rem 0;">
-  <!-- Absolutely positioned profile photo -->
-  <img
-    src="./images/profile.jpg"
-    alt="Professional Photo"
-    style="
-      position: absolute;
-      left: 2.5rem;          /* Adjust this value as needed */
-      top: 50%;
-      transform: translateY(-50%);
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #fff;
-    "
-  />
-
-  <!-- Centered text -->
-  <h1 style="margin-bottom: 0.5rem;">Poorna Natarajan</h1>
-  <p style="margin-bottom: 1rem;">
-    <a href="mailto:pnat614@gmail.com">pnat614@gmail.com</a> • 240-620-9240
-  </p>
-  <a
-    href="https://www.linkedin.com/in/poorna-natarajan"
-    target="_blank"
-    class="connect-button"
-    style="
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      background: rgba(255,255,255,0.2);
-      border: none;
-      border-radius: 6px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    "
-    onmouseover="this.style.background='rgba(255,255,255,0.4)'"
-    onmouseout="this.style.background='rgba(255,255,255,0.2)'"
-  >
-    Let's Connect
-  </a>
-</section>
+        <section class="intro-section" style="position: relative; text-align: center; padding: 2rem 0;">
+          <!-- Profile photo with inline style (will be overridden on small screens) -->
+          <img
+            src="./images/profile.jpg"
+            alt="Professional Photo"
+            style="
+              display: block;
+              margin: 0 auto 1rem;
+              width: 120px;
+              height: 120px;
+              border-radius: 50%;
+              object-fit: cover;
+              border: 3px solid #fff;
+            "
+          />
+          <!-- Centered text -->
+          <h1 style="margin-bottom: 0.5rem;">Poorna Natarajan</h1>
+          <p style="margin-bottom: 1rem;">
+            <a href="mailto:pnat614@gmail.com">pnat614@gmail.com</a> • 240-620-9240
+          </p>
+          <a
+            href="https://www.linkedin.com/in/poorna-natarajan"
+            target="_blank"
+            class="connect-button"
+            style="
+              display: inline-block;
+              padding: 0.6rem 1.2rem;
+              background: rgba(255,255,255,0.2);
+              border: none;
+              border-radius: 6px;
+              color: #fff;
+              text-decoration: none;
+              font-weight: bold;
+              transition: background 0.3s ease;
+            "
+            onmouseover="this.style.background='rgba(255,255,255,0.4)'"
+            onmouseout="this.style.background='rgba(255,255,255,0.2)'"
+          >
+            Let's Connect
+          </a>
+        </section>
 
         <!-- EXPERIENCE HIGHLIGHTS -->
         <section class="experience-section">
