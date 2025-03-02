@@ -28,77 +28,154 @@
       overflow-x: hidden;
     }
 
-    /* STATIC BACKGROUND GRADIENT */
+    /* BODY BACKGROUND (STATIC GRADIENT) */
     body {
-      background: linear-gradient(-45deg, #ff6fcf, #5074fa, #805ade, #d944f7);
+      background: linear-gradient(-45deg, #db93c3, #7a8ccf, #8e7bbd, #bb70ca);
+    }
+
+    /* Make all links dark gray & underlined */
+    a {
+      color: #333;
+      text-decoration: underline;
     }
 
     /* CONTAINER */
     .container {
       margin: 0 auto;
-      max-width: 1000px;
+      max-width: 1200px;
       padding: 2rem 1rem;
     }
 
-    /****************************************************
-      HEADER
-    *****************************************************/
-    header {
-      text-align: center;
-      margin-bottom: 3rem;
+    .content-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      align-items: flex-start; /* So sidebar doesn't stretch full height */
     }
 
-    header h1 {
+    /* SIDEBAR - STATIC POSITION */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 27vw;
+      height: 100vh;
+      background:
+        linear-gradient(rgba(51,51,51,0.2), rgba(51,51,51,0.2)),
+        url('./images/texture.png') repeat;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+      padding: 2rem 1.5rem;
+      overflow-y: auto;
+    }
+
+    .sidebar section {
+      margin-bottom: 2rem;
+    }
+
+    .sidebar h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1rem;
+    }
+
+    .sidebar p {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      opacity: 0.95;
+    }
+
+    /* Vertical timeline for education */
+    .vertical-timeline {
+      position: relative;
+      margin-left: 1rem; /* indent the timeline slightly */
+    }
+
+    .vertical-timeline::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+
+    .timeline-item::before {
+      content: "●";
+      position: absolute;
+      left: -9px;
+      font-size: 0.8rem;
+      color: #ffd86f;
+      text-shadow: 0 0 6px rgba(255,216,111,0.8);
+      top: 0;
+    }
+
+    /****************************************************
+      MAIN CONTENT
+    *****************************************************/
+    .main-content {
+      flex: 1;
+      margin-left: 360px; /* adjusted to reduce spacing */
+    }
+
+    /* Centered sections for name/contact & closing note */
+    .intro-section,
+    .closing-section {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .intro-section h1 {
       font-family: 'Pacifico', cursive;
       font-size: 3rem;
       text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
       margin-bottom: 0.7rem;
+      color: #ffd86f; /* Updated from #fff to #ffd86f */
     }
 
-    header p {
+    .intro-section p {
       font-size: 0.95rem;
       opacity: 0.9;
       margin-bottom: 0.3rem;
     }
 
-    header a {
-      color: #fff;
-      text-decoration: underline;
+    /* Profile Photo */
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      border: 3px solid #fff;
+      display: block;
     }
 
-    /****************************************************
-      ABOUT SECTION
-    *****************************************************/
-    .about-section {
-      text-align: center;
-      border-radius: 12px;
-      padding: 2rem 1rem;
-      background: linear-gradient(120deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-      backdrop-filter: blur(6px);
-      margin-bottom: 3rem;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    /* Connect Button */
+    .connect-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      border-radius: 6px;
+      color: #ffd86f;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
 
-    .about-section h2 {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .about-section p {
-      max-width: 700px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      opacity: 0.95;
-    }
-
-    .highlight {
-      font-weight: 600;
-      text-decoration: underline;
+    .connect-button:hover {
+      background: rgba(255,255,255,0.4);
     }
 
     /****************************************************
@@ -122,30 +199,42 @@
       background: linear-gradient(270deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
       backdrop-filter: blur(5px);
       border-radius: 12px;
-      padding: 1.5rem 1.5rem;
+      padding: 1.5rem;
       margin-bottom: 2rem;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
 
     .role-header {
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       margin-bottom: 1rem;
+    }
+
+    .company-logo {
+      width: 40px;
+      height: auto;
+      margin-right: 10px;
+      border-radius: 5px;
     }
 
     .role-header h3 {
       font-family: 'Montserrat', sans-serif;
       font-size: 1.3rem;
       font-weight: 700;
-      margin-bottom: 0.3rem;
+      margin-bottom: 0.2rem;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .role-header .role-dates {
+    .job-title {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 0 4px;
+      border-radius: 4px;
+    }
+
+    .role-dates {
       font-size: 0.9rem;
       opacity: 0.85;
-      margin-bottom: 0.5rem;
+      margin-top: 0.2rem;
     }
 
     .role-card ul {
@@ -195,175 +284,275 @@
     }
 
     /****************************************************
-      EDUCATION SECTION
+      SKILLS SECTION
     *****************************************************/
-    .education-section {
-      text-align: center;
-      margin-bottom: 3rem;
-      padding: 2rem 1rem;
+    .skills-section {
+      background: linear-gradient(270deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      backdrop-filter: blur(5px);
       border-radius: 12px;
-      background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.04));
-      backdrop-filter: blur(4px);
+      padding: 1.5rem;
+      margin-bottom: 3rem;
       box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     }
 
-    .education-section h2 {
+    .skills-section h2 {
+      text-align: center;
       font-family: 'Montserrat', sans-serif;
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
       font-weight: 700;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     }
 
-    .school-info {
-      max-width: 700px;
-      margin: 0 auto 1rem auto;
+    .skills-category {
+      margin-bottom: 1rem;
+    }
+
+    .skills-category h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #ffd86f;
+    }
+
+    .skills-category p {
+      font-size: 0.95rem;
       line-height: 1.5;
-      font-size: 1rem;
     }
-
-    .school-info strong {
-      display: block;
-      margin-bottom: 0.3rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-
-    /****************************************************
-      FOOTER
-    *****************************************************/
-    footer {
-      text-align: center;
-      font-size: 0.9rem;
-      opacity: 0.8;
-      padding-bottom: 1rem;
-    }
-
-    footer a {
-      color: #fff;
-      text-decoration: underline;
-    }
-
   </style>
 </head>
 <body>
   <div class="container">
-    <!-- HEADER -->
-    <header>
-      <h1>Poorna Natarajan</h1>
+    <div class="content-wrapper">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <!-- ABOUT ME -->
+        <section>
+          <h2>About Me</h2>
+          <p>
+            I'm an AI/ML engineer who has built
+            <strong><u>real-time modular solutions</u></strong>
+            orchestrating
+            <strong><u>large-scale LLM workflows</u></strong>
+            —securing critical contracts at Palantir, SMX, and Deloitte.
+            I supercharge deployments and push the boundaries of human–AI collaboration to deliver real impact.
+          </p>
+        </section>
 
-      <p><a href="mailto:pnat614@gmail.com">pnat614@gmail.com</a> • 240-620-9240</p>
-    </header>
+        <!-- WHAT I'M LOOKING FOR -->
+        <section>
+          <h2>What I'm Looking For</h2>
+          <p>
+            Seeking AI/ML or Software Engineering roles with high growth and impact.
+          </p>
+        </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="about-section">
-      <h2>About Me</h2>
-      <p>
-        I'm an AI/ML engineer who has built <span class="highlight">real-time containerized solutions</span>,
-        orchestrated <span class="highlight">large-scale LLM workflows</span>, and
-        secured critical government contracts at Palantir, SMX, and Deloitte.
-        I supercharge deployments and push the boundaries of human–AI collaboration to deliver real impact.
-      </p>
-    </section>
+        <!-- EDUCATION -->
+        <section>
+          <h2>Education</h2>
+          <ul class="vertical-timeline">
+            <li class="timeline-item">
+              <span class="timeline-year">2023 - Expected 2025</span>
+              <strong>Georgia Institute of Technology</strong><br/>
+              M.S. Computer Science (Focus: ML/Computer Vision)
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-year">Graduated</span>
+              <strong>University of Maryland - College Park</strong><br/>
+              B.S. Bioengineering &amp; B.A. Economics
+            </li>
+          </ul>
+        </section>
 
-    <!-- EXPERIENCE SECTION -->
-    <section class="experience-section">
-      <h2>HIGHLIGHTS</h2>
+        <!-- HOBBIES -->
+        <section>
+          <h2>Hobbies</h2>
+          <p>
+            <strong>🏺 Ceramics</strong> and <strong>🎨 Painting</strong>.<br/>
+            I love bringing ideas to life—whether with clay or on canvas!
+          </p>
+        </section>
+      </aside>
 
-      <!-- Palantir (3 bullets) -->
-      <div class="role-card">
-        <div class="role-header">
-          <h3>Palantir Technologies | Deployment Strategist</h3>
-          <div class="role-dates">March 2024 - February 2025</div>
-        </div>
-        <ul>
-          <li>Designed and developed k-LLM workflows using TypeScript and PySpark, reducing Palantir software deployment time by half, and secured two separate Air Force contracts.</li>
-          <li>Developed a 0 → 1 platform leveraging vector embeddings (ADA 002) and LLMs (GPT4o, Llama 3), reducing civilian job classification cycles from four months to &lt; one hour, scaling it across the Air Force.</li>
-          <li>Developed a real-time containerized computer vision model in Java to detect drones from live video feeds, serving real-time sensor-to-shooter applications.</li>
-        </ul>
-        <div class="skills-used">
-          <span>TypeScript</span>
-          <span>PySpark</span>
-          <span>GPT-4o</span>
-          <span>Llama 3</span>
-          <span>Java</span>
-          <span>Docker</span>
-          <span>Computer Vision</span>
-          <span>Palantir Foundry</span>
-        </div>
-      </div>
+      <!-- MAIN CONTENT -->
+      <main class="main-content">
+        <!-- INTRO (centered) -->
+<!-- INTRO (centered text, profile photo to the left) -->
+<section class="intro-section" style="position: relative; text-align: center; padding: 2rem 0;">
+  <!-- Absolutely positioned profile photo -->
+  <img
+    src="./images/profile.jpg"
+    alt="Professional Photo"
+    style="
+      position: absolute;
+      left: 2.5rem;          /* Adjust this value as needed */
+      top: 50%;
+      transform: translateY(-50%);
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+    "
+  />
 
-      <!-- SMX (3 bullets) -->
-      <div class="role-card">
-        <div class="role-header">
-          <h3>SMX | Machine Learning Engineer</h3>
-          <div class="role-dates">March 2022 - February 2024</div>
-        </div>
-        <ul>
-          <li>Orchestrated ingestion of multiple unstructured data sources with Apache Airflow, streamlining data transformations and increasing throughput.</li>
-          <li>Containerized serverless functions for automated metadata tagging; fine-tuned Claude 3 and GPT-3.5 on Amazon Bedrock for summarization, multilingual translation, and entity extraction.</li>
-          <li>Led a team of nine interns on topic modeling research, culminating in a presentation to C-level execs.</li>
-        </ul>
-        <div class="skills-used">
-          <span>Airflow</span>
-          <span>Python</span>
-          <span>Claude 3</span>
-          <span>GPT-3.5</span>
-          <span>Bedrock</span>
-          <span>Docker</span>
-          <span>Kubernetes</span>
-          <span>AWS</span>
-          <span>FlairNLP</span>
-          <span>Redshift</span>
-          <span>DynamoDB</span>
-          <span>S3</span>
-        </div>
-      </div>
+  <!-- Centered text -->
+  <h1 style="margin-bottom: 0.5rem;">Poorna Natarajan</h1>
+  <p style="margin-bottom: 1rem;">
+    <a href="mailto:pnat614@gmail.com">pnat614@gmail.com</a> • 240-620-9240
+  </p>
+  <a
+    href="https://www.linkedin.com/in/poorna-natarajan"
+    target="_blank"
+    class="connect-button"
+    style="
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    "
+    onmouseover="this.style.background='rgba(255,255,255,0.4)'"
+    onmouseout="this.style.background='rgba(255,255,255,0.2)'"
+  >
+    Let's Connect
+  </a>
+</section>
 
-      <!-- Deloitte (3 bullets) -->
-      <div class="role-card">
-        <div class="role-header">
-          <h3>Deloitte | Senior Consultant</h3>
-          <div class="role-dates">June 2019 - March 2022</div>
-        </div>
-        <ul>
-          <li>Developed a data visualization platform using Databricks for satellite imagery, securing a key Air Force contract.</li>
-          <li>Drove data ingestion and analytics for COVID-19 emergency operations, providing real-time testing data to top government stakeholders.</li>
-          <li>Co-led a 200+ member Spark Community of Practice, developing accelerators for data science teams and partnering with Databricks for internal upskilling.</li>
-        </ul>
-        <div class="skills-used">
-          <span>Databricks</span>
-          <span>Spark</span>
-          <span>SQL</span>
-          <span>AWS</span>
-          <span>Python</span>
-          <span>Data Viz</span>
-          <span>Community Building</span>
-        </div>
-      </div>
-    </section>
+        <!-- EXPERIENCE HIGHLIGHTS -->
+        <section class="experience-section">
+          <h2>HIGHLIGHTS</h2>
 
-    <!-- EDUCATION SECTION -->
-    <section class="education-section">
-      <h2>Education</h2>
-      <div class="school-info">
-        <strong>Georgia Institute of Technology (2023 - Expected 2025)</strong>
-        Master of Science, Computer Science<br>
-        Focus on Machine Learning/Computer Vision
-      </div>
+          <!-- Palantir -->
+          <div class="role-card">
+            <div class="role-header">
+              <img
+                src="./images/palantir.png"
+                alt="Palantir Logo"
+                class="company-logo"
+              />
+              <div>
+                <h3>Palantir Technologies | <span class="job-title">Deployment Strategist</span></h3>
+                <div class="role-dates">March 2024 - March 2025</div>
+              </div>
+            </div>
+            <ul>
+              <li>Designed and developed k-LLM workflows using TypeScript and PySpark, reducing deployment time by half and securing two Air Force contracts.</li>
+              <li>Built a platform leveraging vector embeddings (ADA 002) and LLMs (GPT4o, Llama 3) that cut civilian job classification cycles from four months to under an hour.</li>
+              <li>Created a containerized Java-based model to detect drones from live video feeds for sensor-to-shooter applications.</li>
+            </ul>
+            <div class="skills-used">
+              <span>TypeScript</span>
+              <span>PySpark</span>
+              <span>GPT-4o</span>
+              <span>Llama 3</span>
+              <span>Java</span>
+              <span>Docker</span>
+              <span>Computer Vision</span>
+              <span>Palantir Foundry</span>
+            </div>
+          </div>
 
-      <div class="school-info">
-        <strong>University of Maryland - College Park</strong>
-        B.S. Bioengineering & B.A. Economics
-      </div>
-    </section>
+          <!-- SMX -->
+          <div class="role-card">
+            <div class="role-header">
+              <img
+                src="./images/smx.png"
+                alt="SMX Logo"
+                class="company-logo"
+              />
+              <div>
+                <h3>SMX | <span class="job-title">Machine Learning Engineer</span></h3>
+                <div class="role-dates">March 2022 - March 2024</div>
+              </div>
+            </div>
+            <ul>
+              <li>Managed ingestion of unstructured data sources with Apache Airflow, streamlining transformations and increasing throughput.</li>
+              <li>Developed containerized serverless functions for metadata tagging; fine-tuned models (Cohere Command Light and Llama 2) on Amazon Bedrock for summarization, translation, and extraction.</li>
+              <li>Guided a team of nine interns on topic modeling research, culminating in a presentation to C-level executives.</li>
+            </ul>
+            <div class="skills-used">
+              <span>Airflow</span>
+              <span>Python</span>
+              <span>Cohere Command Light</span>
+              <span>Llama 2</span>
+              <span>Bedrock</span>
+              <span>Docker</span>
+              <span>Kubernetes</span>
+              <span>AWS</span>
+              <span>Redshift</span>
+              <span>DynamoDB</span>
+              <span>S3</span>
+            </div>
+          </div>
 
-    <!-- FOOTER -->
-    <footer>
-      <p>Thank you for visiting!
-        Connect via <a href="mailto:pnat614@gmail.com">email</a>.
-      </p>
-    </footer>
+          <!-- Deloitte -->
+          <div class="role-card">
+            <div class="role-header">
+              <img
+                src="./images/deloitte.png"
+                alt="Deloitte Logo"
+                class="company-logo"
+              />
+              <div>
+                <h3>Deloitte | <span class="job-title">Senior Consultant</span></h3>
+                <div class="role-dates">June 2019 - March 2022</div>
+              </div>
+            </div>
+            <ul>
+              <li>Developed a Databricks-based platform for satellite imagery that secured a key Air Force contract.</li>
+              <li>Led data ingestion and analytics for COVID-19 emergency operations, delivering real-time testing data to White House and Congress.</li>
+              <li>Co-led a 200+ member Spark Community of Practice, developing accelerators and partnering with Databricks for upskilling initiatives.</li>
+            </ul>
+            <div class="skills-used">
+              <span>Databricks</span>
+              <span>Spark</span>
+              <span>SQL</span>
+              <span>AWS</span>
+              <span>Python</span>
+              <span>Data Viz</span>
+              <span>Community Building</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section class="skills-section">
+          <h2>Skills</h2>
+          <div class="skills-category">
+            <h3>Machine Learning &amp; AI</h3>
+            <p>TensorFlow, PyTorch, Keras, Scikit-Learn, FlairNLP, OpenCV</p>
+          </div>
+          <div class="skills-category">
+            <h3>Data Platforms &amp; MLOps</h3>
+            <p>Amazon SageMaker, AzureML, Databricks, MLflow, Terraform, Apache Airflow</p>
+          </div>
+          <div class="skills-category">
+            <h3>Cloud &amp; DevOps</h3>
+            <p>AWS (Redshift, DynamoDB, S3, Lambda), Azure, Docker, Kubernetes, CI/CD</p>
+          </div>
+          <div class="skills-category">
+            <h3>Programming Languages</h3>
+            <p>PySpark, Python, Java, C++, TypeScript</p>
+          </div>
+          <div class="skills-category">
+            <h3>Databases</h3>
+            <p>SQL (PostgreSQL, MySQL), NoSQL</p>
+          </div>
+        </section>
+
+        <!-- CLOSING NOTE (centered) -->
+        <section class="closing-section">
+          <p>
+            Thank you for visiting! Connect via <a href="mailto:pnat614@gmail.com">email</a>.
+          </p>
+        </section>
+      </main>
+    </div>
   </div>
 </body>
 </html>
