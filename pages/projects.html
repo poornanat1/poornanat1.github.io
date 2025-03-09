@@ -92,6 +92,22 @@
       color: inherit;
       display: block;
     }
+    
+    .home-button {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      border-radius: 6px;
+      color: #ffd86f;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+    
+    .home-button:hover {
+      background: rgba(255,255,255,0.4);
+    }
 
     /* Media Queries for Larger Screens */
     @media (min-width: 768px) {
@@ -124,6 +140,10 @@
 <body>
 
   <h1 class="header">Projects</h1>
+  
+  <div style="text-align: center; margin-bottom: 2rem;">
+    <a href="../index.html" class="home-button">Home</a>
+  </div>
 
   <div class="projects-container">
 
