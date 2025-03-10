@@ -47,6 +47,12 @@
       font-size: 0.9rem;
       padding: 0.5rem;
     }
+
+    .active-page {
+      color: #ffd86f;
+      cursor: default;
+      pointer-events: none;
+    }
     
     .container {
       width: 100%;
@@ -366,10 +372,11 @@
       <div class="logo">Poorna Natarajan</div>
       <nav>
         <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="#" class="active-page">Resume</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="about.html">About</a></li>
+          </ul>
       </nav>
     </header>
 

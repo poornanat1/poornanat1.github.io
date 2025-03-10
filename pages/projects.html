@@ -47,6 +47,12 @@
       font-size: 0.9rem;
       padding: 0.5rem;
     }
+
+    .active-page {
+      color: #ffd86f;
+      cursor: default;
+      pointer-events: none;
+    }
     
     .container {
       width: 100%;
@@ -201,8 +207,9 @@
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
+          <li><a href="#" class="active-page">Projects</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
     </header>
