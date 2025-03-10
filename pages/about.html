@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Poorna Natarajan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <style>
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      padding: 2rem 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+    
+    .container {
+      width: 100%;
+      padding: 0 1rem;
+      padding-top: 1rem;
+    }
+
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 1rem 0 3rem;
+      width: 100%;
+    }
+
+    .timeline-container {
+      position: relative;
+      padding: 0;
+      order: 2;
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      order: 1;
+    }
+    
+    .contact-container {
+      order: 3;
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 216, 111, 0.7);
+      box-shadow: 0 0 15px rgba(255, 216, 111, 0.5);
+    }
+    
+    .section-heading {
+      margin-top: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+    }
+
+    .subsection-heading {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+      margin-top: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .vertical-timeline {
+      position: relative;
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+    
+    .vertical-timeline::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 0;
+      width: 3px;
+      height: 100%;
+      background: linear-gradient(180deg, 
+        rgba(255,255,255,0) 0%, 
+        rgba(255,216,111,0.8) 30%, 
+        rgba(255,216,111,0.8) 70%, 
+        rgba(255,255,255,0) 100%);
+      border-radius: 3px;
+      box-shadow: 0 0 15px rgba(255,216,111,0.5);
+    }
+    
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2rem;
+      padding-left: 45px;
+      z-index: 1;
+      width: 100%;
+    }
+    
+    .timeline-dot-container {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .timeline-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ffd86f;
+      box-shadow: 0 0 15px rgba(255,216,111,0.8);
+    }
+    
+    .timeline-dot::before {
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,216,111,0.3);
+      animation: pulse 2s infinite;
+    }
+    
+    .timeline-content {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      padding: 1.25rem;
+      border-radius: 8px;
+      border-left: 3px solid #ffd86f;
+      position: relative;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    
+    .timeline-content::before {
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 15px;
+      width: 0;
+      height: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-right: 8px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .timeline-year {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #ffd86f;
+      margin-bottom: 0.5rem;
+    }
+    
+    .timeline-school {
+      font-weight: 500;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .timeline-degree {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .looking-for {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-note {
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .email-link {
+      color: #ffd86f;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .email-link:hover, .email-link:active {
+      text-decoration: underline;
+      text-shadow: 0 0 5px rgba(255,216,111,0.5);
+    }
+
+    .highlight {
+      color: #ffd86f;
+      font-weight: 500;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2.5rem 2rem;
+      }
+
+      .logo {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+      }
+
+      nav ul {
+        gap: 2rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      .container {
+        padding: 0 2rem;
+      }
+      
+      .profile-section {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 1.5rem;
+      }
+      
+      .about-text {
+        font-size: 1.15rem;
+      }
+      
+      .vertical-timeline::before {
+        left: 24px;
+      }
+      
+      .timeline-item {
+        padding-left: 55px;
+      }
+      
+      .timeline-dot-container {
+        width: 48px;
+        height: 48px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .about-section {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .timeline-container {
+        order: 1;
+        padding-right: 1rem;
+      }
+
+      .content-container {
+        order: 2;
+        padding-left: 1rem;
+      }
+      
+      .contact-container {
+        order: unset;
+        grid-column: 2;
+      }
+      
+      .about-text {
+        font-size: 1.2rem;
+      }
+      
+      .subsection-heading {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="threejs-bg"></canvas>
+
+  <div class="container">
+    <header>
+      <div class="logo">Poorna Natarajan</div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="about-section">
+      <div class="timeline-container">
+        <ul class="vertical-timeline">
+          <li class="timeline-item">
+            <div class="timeline-dot-container">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-year">2023 - Expected 2025</span>
+              <div class="timeline-school">Georgia Institute of Technology</div>
+              <div class="timeline-degree">M.S. Computer Science (Focus: ML/Computer Vision)</div>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-dot-container">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <span class="timeline-year">Graduated</span>
+              <div class="timeline-school">University of Maryland - College Park</div>
+              <div class="timeline-degree">B.S. Bioengineering &amp; B.A. Economics</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="content-container">
+        <div class="profile-section">
+          <img src="../images/profile.jpg" alt="Poorna Natarajan" class="profile-photo">
+          <h1 class="section-heading">About Me</h1>
+        </div>
+        
+        <p class="about-text">
+          AI/ML engineer specializing in <span class="highlight">real-time modular solutions</span> and <span class="highlight">large-scale LLM workflows</span>. Expert in designing production-ready AI systems that deliver measurable business outcomes through my work at Palantir, SMX, and Deloitte.
+        </p>
+        
+        <p class="about-text">
+          Focused on creating resilient, scalable architectures at the intersection of software engineering and machine learning. Driven to advance human-AI collaboration by finding the optimal balance between automation and expertise.
+        </p>
+        
+        <h2 class="subsection-heading">What I'm Looking For</h2>
+        <div class="looking-for">
+          <p class="about-text">
+            Seeking AI/ML or Software Engineering roles with high growth potential and meaningful impact. Interested in positions working with cutting-edge technologies to solve real-world problems.
+          </p>
+        </div>
+        
+      </div>
+      
+      <div class="contact-container">
+        <p class="contact-note">
+          Thanks for visiting! Feel free to reach out at <a href="mailto:pnat614@gmail.com" class="email-link">pnat614@gmail.com</a> if you'd like to connect.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initPage } from '../js/shared.js';
+    
+    document.addEventListener('DOMContentLoaded', initPage);
+  </script>
+</body>
+</html>
