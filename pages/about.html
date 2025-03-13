@@ -68,7 +68,7 @@
       width: 100%;
     }
 
-    .timeline-container {
+    .hobbies-container {
       position: relative;
       padding: 0;
       order: 2;
@@ -123,106 +123,60 @@
       color: rgba(255, 255, 255, 0.9);
     }
 
-    .vertical-timeline {
-      position: relative;
-      list-style-type: none;
-      padding-left: 0;
-      margin: 0;
-    }
-    
-    .vertical-timeline::before {
-      content: "";
-      position: absolute;
-      left: 18px;
-      top: 0;
-      width: 3px;
-      height: 100%;
-      background: linear-gradient(180deg, 
-        rgba(255,255,255,0) 0%, 
-        rgba(255,216,111,0.8) 30%, 
-        rgba(255,216,111,0.8) 70%, 
-        rgba(255,255,255,0) 100%);
-      border-radius: 3px;
-      box-shadow: 0 0 15px rgba(255,216,111,0.5);
-    }
-    
-    .timeline-item {
-      position: relative;
-      margin-bottom: 2rem;
-      padding-left: 45px;
-      z-index: 1;
+    /* Hobby tiles styles */
+    .hobby-tiles {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
       width: 100%;
     }
     
-    .timeline-dot-container {
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    
-    .timeline-dot {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: #ffd86f;
-      box-shadow: 0 0 15px rgba(255,216,111,0.8);
-    }
-    
-    .timeline-dot::before {
-      content: "";
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      border: 2px solid rgba(255,216,111,0.3);
-      animation: pulse 2s infinite;
-    }
-    
-    .timeline-content {
+    .hobby-tile {
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(5px);
-      padding: 1.25rem;
       border-radius: 8px;
       border-left: 3px solid #ffd86f;
-      position: relative;
-      width: 100%;
-      box-sizing: border-box;
+      overflow: hidden;
+      transition: all 0.3s ease;
     }
     
-    .timeline-content::before {
-      content: "";
-      position: absolute;
-      left: -10px;
-      top: 15px;
-      width: 0;
-      height: 0;
-      border-top: 8px solid transparent;
-      border-bottom: 8px solid transparent;
-      border-right: 8px solid rgba(255, 255, 255, 0.1);
+    .hobby-tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     
-    .timeline-year {
-      display: block;
-      font-size: 0.95rem;
+    .hobby-content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .hobby-icon {
+      font-size: 2.5rem;
+      color: #ffd86f;
+      margin-bottom: 1rem;
+    }
+    
+    .hobby-title {
+      font-size: 1.3rem;
       font-weight: 500;
       color: #ffd86f;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
     
-    .timeline-school {
-      font-weight: 500;
-      font-size: 1rem;
-      margin-bottom: 0.3rem;
+    .coming-soon {
+      display: inline-block;
+      background: rgba(255, 216, 111, 0.2);
+      color: #ffd86f;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
     }
     
-    .timeline-degree {
-      font-size: 0.9rem;
-      color: rgba(255, 255, 255, 0.7);
+    .hobby-description {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
     }
 
     .looking-for {
@@ -252,17 +206,6 @@
     .highlight {
       color: #ffd86f;
       font-weight: 500;
-    }
-
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-        opacity: 1;
-      }
-      100% {
-        transform: scale(1.5);
-        opacity: 0;
-      }
     }
 
     @media (min-width: 768px) {
@@ -300,17 +243,8 @@
         font-size: 1.15rem;
       }
       
-      .vertical-timeline::before {
-        left: 24px;
-      }
-      
-      .timeline-item {
-        padding-left: 55px;
-      }
-      
-      .timeline-dot-container {
-        width: 48px;
-        height: 48px;
+      .hobby-tiles {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -323,7 +257,7 @@
         margin: 0 auto;
       }
 
-      .timeline-container {
+      .hobbies-container {
         order: 1;
         padding-right: 1rem;
       }
@@ -334,7 +268,7 @@
       }
       
       .contact-container {
-        order: unset;
+        order: 3;
         grid-column: 2;
         text-align: center;
       }
@@ -367,30 +301,27 @@
     </header>
 
     <div class="about-section">
-      <div class="timeline-container">
-        <h2 class="subsection-heading">Education</h2>
-        <ul class="vertical-timeline">
-          <li class="timeline-item">
-            <div class="timeline-dot-container">
-              <div class="timeline-dot"></div>
+      <div class="hobbies-container">
+        <h2 class="subsection-heading">Hobbies</h2>
+        <div class="hobby-tiles">
+          <div class="hobby-tile">
+            <div class="hobby-content">
+              <div class="hobby-icon">📷</div>
+              <h3 class="hobby-title">Photography</h3>
+              <span class="coming-soon">Coming Soon</span>
+              <p class="hobby-description">Exploring light and composition through street photography and landscapes. Portfolio in development.</p>
             </div>
-            <div class="timeline-content">
-              <span class="timeline-year">2023 - Expected 2025</span>
-              <div class="timeline-school">Georgia Institute of Technology</div>
-              <div class="timeline-degree">M.S. Computer Science (Focus: ML/Computer Vision)</div>
+          </div>
+          
+          <div class="hobby-tile">
+            <div class="hobby-content">
+              <div class="hobby-icon">🏺</div>
+              <h3 class="hobby-title">Pottery</h3>
+              <span class="coming-soon">Coming Soon</span>
+              <p class="hobby-description">Creating functional ceramics with a focus on minimalist design and traditional techniques. Gallery updates soon.</p>
             </div>
-          </li>
-          <li class="timeline-item">
-            <div class="timeline-dot-container">
-              <div class="timeline-dot"></div>
-            </div>
-            <div class="timeline-content">
-              <span class="timeline-year">Graduated</span>
-              <div class="timeline-school">University of Maryland - College Park</div>
-              <div class="timeline-degree">B.S. Bioengineering &amp; B.A. Economics</div>
-            </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
       
       <div class="content-container">
@@ -414,11 +345,12 @@
           </p>
         </div>
       </div>
-    </div>
-    <div class="contact-container">
-      <p class="contact-note">
-        Thanks for visiting! Feel free to reach out at <a href="mailto:pnat614@gmail.com" class="email-link">pnat614@gmail.com</a> if you'd like to connect.
-      </p>
+      
+      <div class="contact-container">
+        <p class="contact-note">
+          Thanks for visiting! Feel free to reach out at <a href="mailto:pnat614@gmail.com" class="email-link">pnat614@gmail.com</a> if you'd like to connect.
+        </p>
+      </div>
     </div>
   </div>
 

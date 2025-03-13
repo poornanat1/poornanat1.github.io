@@ -249,6 +249,32 @@
       }
     }
 
+    /* Education Section Styles */
+    .education-timeline {
+      position: relative;
+      max-width: 900px;
+      margin: 4rem auto 0;
+    }
+
+    .school-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 1rem;
+    }
+
+    .school-logo img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      filter: drop-shadow(0 0 8px rgba(255,216,111,0.7));
+      transition: all 0.3s ease;
+    }
+
+    .active .school-logo img {
+      transform: scale(1.1);
+    }
+
     @media (min-width: 768px) {
       header {
         flex-direction: row;
@@ -296,7 +322,7 @@
         left: -7px;
       }
       
-      .company-logo img {
+      .company-logo img, .school-logo img {
         width: 50px;
         height: 50px;
       }
@@ -323,7 +349,7 @@
     }
 
     @media (min-width: 1024px) {
-      .company-logo img {
+      .company-logo img, .school-logo img {
         width: 60px;
         height: 60px;
       }
@@ -505,7 +531,74 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- New Education Section -->
+    <div class="resume-section">
+      <h1 class="section-heading">Education</h1>
+      
+      <div class="education-timeline">
+        <div class="timeline-line"></div>
         
+        <div class="experience-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-content">
+            <div class="experience-header" onclick="toggleDetails(this)">
+              <div class="company-info">
+                <div class="school-logo">
+                  <img src="../images/gatech.png" alt="Georgia Tech Logo">
+                </div>
+                <div class="company-text">
+                  <div class="company-name">Georgia Institute of Technology</div>
+                  <div class="job-title">M.S. Computer Science (Focus: ML/Computer Vision)</div>
+                  <div class="job-period">2023 - Expected 2025</div>
+                </div>
+              </div>
+              <div class="toggle-icon">▼</div>
+            </div>
+            <div class="experience-details">
+              <div class="job-responsibilities">
+                <div class="responsibility-item">
+                  Relevant coursework: Artificial Intelligence, Deep Learning, Computer Vision, Computational Photography, Computer Graphics
+                </div>
+                <div class="responsibility-item">
+                  Research focus on application of differential privacy techniques with large language models
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="experience-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-content">
+            <div class="experience-header" onclick="toggleDetails(this)">
+              <div class="company-info">
+                <div class="school-logo">
+                  <img src="../images/umd.png" alt="University of Maryland Logo">
+                </div>
+                <div class="company-text">
+                  <div class="company-name">University of Maryland - College Park</div>
+                  <div class="job-title">B.S. Bioengineering & B.A. Economics</div>
+                  <div class="job-period">Graduated</div>
+                </div>
+              </div>
+              <div class="toggle-icon">▼</div>
+            </div>
+            <div class="experience-details">
+              <div class="job-responsibilities">
+                <div class="responsibility-item">
+                  Double major combining quantitative analysis with engineering problem-solving approach
+                </div>
+                <div class="responsibility-item">
+                  Senior project focused on medical device development with computer vision applications in C
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
