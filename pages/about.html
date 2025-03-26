@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - Poorna Natarajan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <style>
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      padding: 2rem 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .active-page {
+      color: #ffd86f;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .logo {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+    
+    .container {
+      width: 100%;
+      padding: 0 1rem;
+      padding-top: 1rem;
+    }
+
+    .about-section {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 1rem 0 3rem;
+      width: 100%;
+    }
+
+    .hobbies-container {
+      position: relative;
+      padding: 0;
+      order: 2;
+    }
+
+    .content-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      order: 1;
+    }
+    
+    .contact-container {
+      order: 3;
+    }
+
+    .profile-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 2rem;
+      gap: 1rem;
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 216, 111, 0.7);
+      box-shadow: 0 0 15px rgba(255, 216, 111, 0.5);
+    }
+    
+    .section-heading {
+      margin-top: 0.5rem;
+      font-size: 1.8rem;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 1.5rem;
+    }
+
+    .subsection-heading {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-bottom: 1.25rem;
+      margin-top: 1.5rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Hobby tiles styles */
+    .hobby-tiles {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      width: 100%;
+    }
+    
+    .hobby-tile {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border-radius: 8px;
+      border-left: 3px solid #ffd86f;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    
+    .hobby-tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    .hobby-content {
+      padding: 1.5rem;
+      text-align: center;
+    }
+    
+    .hobby-icon {
+      font-size: 2.5rem;
+      color: #ffd86f;
+      margin-bottom: 1rem;
+    }
+    
+    .hobby-title {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #ffd86f;
+      margin-bottom: 0.75rem;
+    }
+    
+    .coming-soon {
+      display: inline-block;
+      background: rgba(255, 216, 111, 0.2);
+      color: #ffd86f;
+      font-size: 0.85rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    
+    .hobby-description {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.8);
+      line-height: 1.5;
+    }
+
+    .looking-for {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-note {
+      font-size: 1rem;
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .email-link {
+      color: #ffd86f;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .email-link:hover, .email-link:active {
+      text-decoration: underline;
+      text-shadow: 0 0 5px rgba(255,216,111,0.5);
+    }
+
+    .highlight {
+      color: #ffd86f;
+      font-weight: 500;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2.5rem 2rem;
+      }
+
+      .logo {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+      }
+
+      nav ul {
+        gap: 2rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      .container {
+        padding: 0 2rem;
+      }
+      
+      .profile-section {
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 1.5rem;
+      }
+      
+      .about-text {
+        font-size: 1.15rem;
+      }
+      
+      .hobby-tiles {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .about-section {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .hobbies-container {
+        order: 1;
+        padding-right: 1rem;
+      }
+
+      .content-container {
+        order: 2;
+        padding-left: 1rem;
+      }
+      
+      .contact-container {
+        order: 3;
+        grid-column: 2;
+        text-align: center;
+      }
+      
+      .about-text {
+        font-size: 1.2rem;
+      }
+      
+      .subsection-heading {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="threejs-bg"></canvas>
+
+  <div class="container">
+    <header>
+      <div class="logo">Poorna Natarajan</div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="#" class="active-page">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="about-section">
+      <div class="hobbies-container">
+        <h2 class="subsection-heading">Hobbies</h2>
+        <div class="hobby-tiles">
+          <div class="hobby-tile">
+            <div class="hobby-content">
+              <div class="hobby-icon">📷</div>
+              <h3 class="hobby-title">Photography</h3>
+              <span class="coming-soon">Coming Soon</span>
+              <p class="hobby-description">Exploring light and composition through street photography and landscapes. Portfolio in development.</p>
+            </div>
+          </div>
+          
+          <div class="hobby-tile">
+            <div class="hobby-content">
+              <div class="hobby-icon">🏺</div>
+              <h3 class="hobby-title">Pottery</h3>
+              <span class="coming-soon">Coming Soon</span>
+              <p class="hobby-description">Creating functional ceramics with a focus on minimalist design and traditional techniques.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content-container">
+        <div class="profile-section">
+          <img src="../images/profile.jpg" alt="Poorna Natarajan" class="profile-photo">
+          <h1 class="section-heading">About Me</h1>
+        </div>
+        
+        <p class="about-text">
+          Software engineer specializing in <span class="highlight">real-time modular solutions</span> and <span class="highlight">large-scale LLM workflows</span>. Experience in designing production-ready AI systems through my work at Palantir, SMX, and Deloitte.
+        </p>
+        
+        <p class="about-text">
+          I design resilient, scalable systems where software engineering meets machine learning. My goal is to enhance human-AI collaboration by striking the right balance between automation and human expertise.
+        </p>
+        
+        <h2 class="subsection-heading">What I'm Looking For</h2>
+        <div class="looking-for">
+          <p class="about-text">
+            Looking for software engineering roles with high growth potential and meaningful impact. Excited to work with AI, distributed systems, and cloud-native architectures to solve real-world challenges.
+          </p>
+        </div>
+      </div>
+      
+      <div class="contact-container">
+        <p class="contact-note">
+          Thanks for visiting! Feel free to reach out at <a href="mailto:pnat614@gmail.com" class="email-link">pnat614@gmail.com</a> if you'd like to connect.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initPage } from '../js/shared.js';
+    
+    document.addEventListener('DOMContentLoaded', initPage);
+  </script>
+</body>
+</html>

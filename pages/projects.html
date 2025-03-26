@@ -8,57 +8,99 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@600;700&family=Poppins:wght@300;400;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@300;400;500;600;700&display=swap"
     rel="stylesheet"
   />
 
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+  <link rel="stylesheet" href="../css/shared.css" />
 
+  <style>
     body {
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      background: linear-gradient(-45deg, #db93c3, #7a8ccf, #8e7bbd, #bb70ca);
-      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      padding: 2rem 1rem 1.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 1.5rem;
+      width: 100%;
     }
 
-    .header {
-      font-family: 'Pacifico', cursive;
-      font-size: 2.5rem;
+    .logo {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+
+    .active-page {
       color: #ffd86f;
-      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      margin-bottom: 2rem;
+      cursor: default;
+      pointer-events: none;
+    }
+    
+    .container {
+      width: 100%;
+      padding: 0 1rem;
+      padding-top: 1rem;
+      box-sizing: border-box;
+    }
+
+    .projects-section {
+      display: flex;
+      flex-direction: column;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 0 3rem;
+      width: 100%;
+    }
+
+    .section-heading {
       text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      font-weight: 500;
     }
 
     .projects-container {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
       width: 100%;
       max-width: 500px;
+      margin: 0 auto;
     }
 
     .project-card {
       width: 100%;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(6px);
-      border-radius: 14px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
       overflow: hidden;
-      transition: transform 0.3s ease;
+      transition: all 0.3s ease;
+      border-left: 3px solid #ffd86f;
     }
 
-    .project-card:hover {
-      transform: translateY(-8px);
-    }
-
-    .project-card:active {
-      transform: translateY(0);
+    .project-card:hover, .project-card:active {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 0.15);
     }
 
     .thumbnail {
@@ -66,98 +108,145 @@
       height: 200px;
       background-size: cover;
       background-position: center;
-      filter: brightness(0.8);
+      border-radius: 5px 5px 0 0;
+      border-bottom: 2px solid rgba(255, 216, 111, 0.5);
     }
 
     .project-info {
-      padding: 1rem;
-      text-align: center;
+      padding: 1.5rem;
     }
 
     .project-title {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      font-weight: 500;
       color: #ffd86f;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .project-description {
-      font-size: 0.9rem;
-      opacity: 0.9;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.8);
     }
 
     .project-link {
       text-decoration: none;
       color: inherit;
       display: block;
-    }
-    
-    .home-button {
-      display: inline-block;
-      padding: 0.6rem 1.2rem;
-      background: rgba(255,255,255,0.2);
-      border: none;
-      border-radius: 6px;
-      color: #ffd86f;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    
-    .home-button:hover {
-      background: rgba(255,255,255,0.4);
+      -webkit-tap-highlight-color: transparent;
     }
 
-    /* Media Queries for Larger Screens */
     @media (min-width: 768px) {
-      .header {
-        font-size: 3rem;
-        margin-bottom: 3rem;
-      }
-
-      .projects-container {
+      header {
         flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        max-width: 1200px;
+        justify-content: space-between;
+        padding: 2.5rem 2rem;
       }
 
-      .project-card {
-        width: 350px;
+      .logo {
+        margin-bottom: 0;
+        font-size: 1.8rem;
       }
 
+      nav ul {
+        gap: 2rem;
+      }
+
+      nav a {
+        font-size: 1rem;
+      }
+
+      .container {
+        padding: 0 2rem;
+      }
+      
       .thumbnail {
         height: 250px;
       }
+      
+      .projects-container {
+        gap: 2.5rem;
+      }
+      
+      .project-info {
+        padding: 1.75rem;
+      }
+    }
 
+    @media (min-width: 1024px) {
+      .thumbnail {
+        height: 350px;
+      }
+      
       .project-title {
-        font-size: 1.4rem;
+        font-size: 1.8rem;
+      }
+      
+      .project-description {
+        font-size: 1.2rem;
+      }
+      
+      .project-info {
+        padding: 2rem;
+      }
+      
+      .projects-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
       }
     }
   </style>
 </head>
 <body>
 
-  <h1 class="header">Projects</h1>
-  
-  <div style="text-align: center; margin-bottom: 2rem;">
-    <a href="../index.html" class="home-button">Home</a>
-  </div>
+  <canvas id="threejs-bg"></canvas>
 
-  <div class="projects-container">
+  <div class="container">
+    <header>
+      <div class="logo">Poorna Natarajan</div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="#" class="active-page">Projects</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
 
-    <div class="project-card">
-      <a href="https://spotify-analyzer-4o.vercel.app" target="_blank" class="project-link">
-        <div class="thumbnail" style="background-image: url('../images/spotify-analyze.png');"></div>
-        <div class="project-info">
-          <h2 class="project-title">Spotify Playlist Portrait</h2>
-          <p class="project-description">Music analysis of your Spotify playlists with GPT 4o.</p>
+    <div class="projects-section">
+      <h1 class="section-heading">Projects</h1>
+      
+      <div class="projects-container">
+        <div class="project-card">
+          <a href="https://spotify-analyzer-4o.vercel.app" target="_blank" class="project-link">
+            <div class="thumbnail" style="background-image: url('../images/spotify-analyze.png');"></div>
+            <div class="project-info">
+              <h2 class="project-title">Spotify Playlist Portrait</h2>
+              <p class="project-description">Music analysis of your Spotify playlists with GPT 4o.</p>
+            </div>
+          </a>
         </div>
-      </a>
+        
+        <!--
+        <div class="project-card">
+          <a href="#" target="_blank" class="project-link">
+            <div class="thumbnail" style="background-image: url('../images/project-placeholder.jpg');"></div>
+            <div class="project-info">
+              <h2 class="project-title">Project Name</h2>
+              <p class="project-description">Brief description of the project goes here.</p>
+            </div>
+          </a>
+        </div>
+        -->
+      </div>
     </div>
-
   </div>
 
+  <script type="module">
+    import { initPage } from '../js/shared.js';
+    
+    document.addEventListener('DOMContentLoaded', initPage);
+  </script>
 </body>
 </html>
