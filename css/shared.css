@@ -7,7 +7,7 @@
   html, body {
     height: 100%;
     width: 100%;
-    font-family: 'Proza Libre', sans-serif;
+    font-family: 'Bitter', sans-serif;
     font-weight: 300;
     color: #fff;
     background: linear-gradient(-45deg, #db93c3, #7a8ccf, #8e7bbd, #bb70ca);
@@ -50,6 +50,7 @@
   }
   
   .logo {
+    font-family: 'Boldonse', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 1px;
