@@ -8,7 +8,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&family=Boldonse&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Gidole&family=Boldonse&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/shared.css" />
 
   <style>
@@ -414,30 +414,7 @@
       <div class="experience-timeline">
         <div class="timeline-line"></div>
 
-        <div class="experience-item active">
-          <div class="timeline-dot"></div>
-          <div class="experience-content">
-            <div class="experience-header" onclick="toggleDetails(this)">
-              <div class="company-info">
-                <div class="company-logo">
-                  <img src="../images/oa.png" alt="Outside Analytics">
-                </div>
-                <div class="company-text">
-                  <div class="company-name">Outside Analytics</div>
-                  <div class="job-title">Software Engineer - MLOps</div>
-                  <div class="job-period">April 2025 - Present</div>
-                </div>
-              </div>
-              <div class="toggle-icon">▼</div>
-            </div>
-            <div class="experience-details">
-              <div class="job-responsibilities">
-                <div class="responsibility-item">I am contributing to the U.S. Space Force's MDPAP initiative by building and maintaining scalable, machine learning-enabled infrastructure to support mission-critical space domain awareness operations.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <!-- Palantir -->
         <div class="experience-item">
           <div class="timeline-dot"></div>
           <div class="experience-content">
@@ -449,19 +426,24 @@
                 <div class="company-text">
                   <div class="company-name">Palantir Technologies</div>
                   <div class="job-title">Deployment Strategist</div>
-                  <div class="job-period">March 2024 - February 2025</div>
+                  <div class="job-period">March 2024 - March 2025</div>
                 </div>
               </div>
               <div class="toggle-icon">▼</div>
             </div>
             <div class="experience-details">
               <div class="job-responsibilities">
-                <div class="responsibility-item">I developed mission-critical data platforms and full-stack applications for government clients. My contributions included building AIP workflows using TypeScript and PySpark and deploying a real-time sensor fusion app for enhanced drone tracking. I also built internal tools for smart contract management.</div>
+                <div class="responsibility-item">Built k-LLM workflows using TypeScript and PySpark, enhancing processing reliability and securing two Air Force contracts.</div>
+                <div class="responsibility-item">Led 0 → 1 development of a full-stack platform with vector embeddings (ADA 002) and LLMs (GPT-4o, Llama 3), reducing job classification from 4 months to under 1 hour.</div>
+                <div class="responsibility-item">Developed a real-time streaming Java app for sensor fusion on Palantir Foundry, boosting drone tracking accuracy.</div>
+                <div class="responsibility-item">Deployed containerized Java/OpenCV computer vision model, tuning hyperparameters to raise accuracy from 86% to 93%.</div>
+                <div class="responsibility-item">Built NLP pipelines (GPT-4o, PySpark) for a government sales lead platform.</div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- SMX -->
         <div class="experience-item">
           <div class="timeline-dot"></div>
           <div class="experience-content">
@@ -473,19 +455,25 @@
                 <div class="company-text">
                   <div class="company-name">SMX</div>
                   <div class="job-title">Machine Learning Engineer</div>
-                  <div class="job-period">March 2022 - February 2024</div>
+                  <div class="job-period">March 2022 - March 2024</div>
                 </div>
               </div>
               <div class="toggle-icon">▼</div>
             </div>
             <div class="experience-details">
               <div class="job-responsibilities">
-                <div class="responsibility-item">I led data pipeline optimization efforts and the development of scalable AI solutions. My responsibilities included orchestrating data ingestion using Apache Airflow, accelerating inference workflows with GPU integration, and deploying NLP services via Amazon Bedrock. I also fine-tuned LLMs for metadata tagging and managed a team of interns in applied ML research initiatives.</div>
+                <div class="responsibility-item">Built data pipelines using Apache Airflow, boosting throughput for unstructured sources.</div>
+                <div class="responsibility-item">Optimized GPU-based classification workflows, cutting inference latency by 18%.</div>
+                <div class="responsibility-item">Deployed serverless functions for metadata tagging with LLMs (Cohere, Llama 2) on Amazon Bedrock.</div>
+                <div class="responsibility-item">Trained FlairNLP NER models using active learning, reaching a 92% F1 score.</div>
+                <div class="responsibility-item">Integrated REST APIs with Amazon Redshift, DynamoDB, and S3.</div>
+                <div class="responsibility-item">Led 9-intern research team on topic modeling; presented results to executives.</div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- Deloitte -->
         <div class="experience-item">
           <div class="timeline-dot"></div>
           <div class="experience-content">
@@ -504,11 +492,42 @@
             </div>
             <div class="experience-details">
               <div class="job-responsibilities">
-                <div class="responsibility-item">I contributed to large-scale data engineering projects for both defense and public health clients. I led the development of interactive data visualization platforms, designed scalable cloud-based pipelines on AWS, and supported high-stakes analytics for COVID-19 emergency response. Additionally, I helped build a Spark Community of Practice, mentored peers, and contributed to internal innovation efforts.</div>
+                <div class="responsibility-item">Led ingestion and analytics systems for COVID-19 operations, supporting the White House and Congress.</div>
+                <div class="responsibility-item">Designed AWS-based data pipelines for public health with reliability and scalability in mind.</div>
+                <div class="responsibility-item">Developed a React/Databricks visualization platform, supporting Air Force contracts in satellite imagery analytics.</div>
+                <div class="responsibility-item">Co-led a 200+ member Spark Community of Practice for internal tooling and upskilling.</div>
+                <div class="responsibility-item">Selected for Deloitte Innovation Fellowship for next-gen architecture work.</div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- Booz Allen -->
+        <div class="experience-item">
+          <div class="timeline-dot"></div>
+          <div class="experience-content">
+            <div class="experience-header" onclick="toggleDetails(this)">
+              <div class="company-info">
+                <div class="company-logo">
+                  <img src="../images/bah.png" alt="Booz Allen Hamilton Logo">
+                </div>
+                <div class="company-text">
+                  <div class="company-name">Booz Allen Hamilton</div>
+                  <div class="job-title">Consultant</div>
+                  <div class="job-period">July 2018 – June 2019</div>
+                </div>
+              </div>
+              <div class="toggle-icon">▼</div>
+            </div>
+            <div class="experience-details">
+              <div class="job-responsibilities">
+                <div class="responsibility-item">Built NLP pipelines to extract KPIs from unstructured medical notes.</div>
+                <div class="responsibility-item">Developed time series forecasting systems with Facebook Prophet to monitor 600+ Defense Health Agency clinics.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -517,6 +536,7 @@
       <div class="education-timeline">
         <div class="timeline-line"></div>
 
+        <!-- Georgia Tech -->
         <div class="experience-item">
           <div class="timeline-dot"></div>
           <div class="experience-content">
@@ -527,20 +547,21 @@
                 </div>
                 <div class="company-text">
                   <div class="company-name">Georgia Institute of Technology</div>
-                  <div class="job-title">M.S. Computer Science (Focus: ML/Computer Vision)</div>
-                  <div class="job-period">2023 - Expected 2025</div>
+                  <div class="job-title">M.S. Computer Science</div>
+                  <div class="job-period">Expected Dec 2025</div>
                 </div>
               </div>
               <div class="toggle-icon">▼</div>
             </div>
             <div class="experience-details">
               <div class="job-responsibilities">
-                <div class="responsibility-item">My coursework includes AI, robotics, deep learning, and software development. I completed a research project focusing on application of differential privacy techniques with large language models</div>
+                <div class="responsibility-item">Research: Applied differential privacy on transformer-based clinical summarizers to protect PII from adversarial attacks. Built models from scratch to test robustness.</div>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- University of Maryland -->
         <div class="experience-item">
           <div class="timeline-dot"></div>
           <div class="experience-content">
@@ -551,7 +572,7 @@
                 </div>
                 <div class="company-text">
                   <div class="company-name">University of Maryland - College Park</div>
-                  <div class="job-title">B.S. Bioengineering & B.A. Economics</div>
+                  <div class="job-title">B.S. Bioengineering, B.A. Economics</div>
                   <div class="job-period">Graduated</div>
                 </div>
               </div>
@@ -559,11 +580,12 @@
             </div>
             <div class="experience-details">
               <div class="job-responsibilities">
-                <div class="responsibility-item">I hold dual bachelor's degrees in Bioengineering and Economics. For my senior project, I built a C-based computational imaging prototype for early detection and diagnosis of respiratory diseases.</div>
+                <div class="responsibility-item">Capstone: Built a C-based computational imaging system for early respiratory disease detection in collaboration with Dr. Jeffrey D. Hasday and the Fischell Institute.</div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
