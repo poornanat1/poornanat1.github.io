@@ -77,16 +77,30 @@
     }
 
     .projects-container {
-      display: grid;
-      grid-template-columns: 1fr;
+      display: flex;
+      flex-direction: row;
       gap: 2rem;
       width: 100%;
-      max-width: 500px;
+      max-width: none;
       margin: 0 auto;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 1rem 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .projects-container::-webkit-scrollbar {
+      display: none;
     }
 
     .project-card {
-      width: 100%;
+      min-width: 85vw;
+      max-width: 700px;
+      scroll-snap-align: center;
+      flex-shrink: 0;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(6px);
       border-radius: 8px;
@@ -163,8 +177,8 @@
         height: 250px;
       }
       
-      .projects-container {
-        gap: 2.5rem;
+      .project-card {
+        min-width: 600px;
       }
       
       .project-info {
@@ -188,11 +202,27 @@
       .project-info {
         padding: 2rem;
       }
-      
-      .projects-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .scroll-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 216, 111, 0.3);
+      transition: background 0.3s ease;
+    }
+
+    .scroll-dot.active {
+      background: rgba(255, 216, 111, 1);
     }
   </style>
 </head>
@@ -227,17 +257,21 @@
           </a>
         </div>
         
-        <!--
         <div class="project-card">
-          <a href="#" target="_blank" class="project-link">
-            <div class="thumbnail" style="background-image: url('../images/project-placeholder.jpg');"></div>
+          <a href="https://ecoscape-globalization-viz.vercel.app/" target="_blank" class="project-link">
+            <div class="thumbnail" style="background-image: url('../images/ecoscape.png');"></div>
             <div class="project-info">
-              <h2 class="project-title">Project Name</h2>
-              <p class="project-description">Brief description of the project goes here.</p>
+              <h2 class="project-title">Ecoscape</h2>
+              <p class="project-description">[Desktop Only] Explore global temperature trends
+                through interactive visualization.</p>
             </div>
           </a>
         </div>
-        -->
+      </div>
+      
+      <div class="scroll-indicator">
+        <div class="scroll-dot active"></div>
+        <div class="scroll-dot"></div>
       </div>
     </div>
   </div>
@@ -245,7 +279,25 @@
   <script type="module">
     import { initPage } from '../js/shared.js';
     
-    document.addEventListener('DOMContentLoaded', initPage);
+    document.addEventListener('DOMContentLoaded', () => {
+      initPage();
+      initScrollIndicator();
+    });
+
+    function initScrollIndicator() {
+      const container = document.querySelector('.projects-container');
+      const dots = document.querySelectorAll('.scroll-dot');
+      
+      container.addEventListener('scroll', () => {
+        const scrollPosition = container.scrollLeft;
+        const cardWidth = container.querySelector('.project-card').offsetWidth;
+        const activeIndex = Math.round(scrollPosition / cardWidth);
+        
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === activeIndex);
+        });
+      });
+    }
   </script>
 </body>
 </html>
