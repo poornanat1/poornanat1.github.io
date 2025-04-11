@@ -7,7 +7,7 @@
   html, body {
     height: 100%;
     width: 100%;
-    font-family: "Gidole", sans-serif;
+    font-family: "Expletus Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #fff;
@@ -66,6 +66,7 @@
   }
   
   nav a {
+    font-family: "Expletus Sans", sans-serif;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-size: 1rem;
