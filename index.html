@@ -7,10 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Boldonse&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/shared.css" />
 
@@ -26,7 +23,7 @@
     }
 
     header {
-      padding: 2rem 1rem 1.5rem;
+      padding: 1rem 1rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -37,6 +34,8 @@
       margin-bottom: 1.5rem;
       font-size: 1.5rem;
       font-weight: 500;
+      font-family: 'Boldonse', sans-serif;
+      color: #ffd86f;
     }
 
     nav ul {
@@ -48,6 +47,7 @@
     }
 
     nav a {
+      font-family: "Expletus Sans", sans-serif;
       font-size: 0.9rem;
       padding: 0.5rem;
     }
@@ -61,15 +61,17 @@
     .hero {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       width: 100%;
-      padding: 2rem 1rem;
-      min-height: calc(100vh - 8rem);
+      padding: 1.5rem 1rem;
+      min-height: calc(100vh - 12rem);
+      margin-top: 0;
     }
 
     .hero-title {
-      font-size: 2rem;
-      font-weight: 300;
+      font-family: "Expletus Sans", sans-serif;
+      font-size: 1.75rem;
+      font-weight: 400;
       line-height: 1.3;
       max-width: 100%;
       color: rgba(255, 255, 255, 0.9);
@@ -80,9 +82,10 @@
     }
 
     .hero-subtitle {
-      font-size: 1rem;
+      font-family: "Expletus Sans", sans-serif;
+      font-size: 0.95rem;
       line-height: 1.5;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       width: 100%;
       max-width: 100%;
       color: rgba(255, 255, 255, 0.7);
@@ -104,6 +107,7 @@
       border: 1px solid rgba(255, 255, 255, 0.2);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       font-size: 0.9rem;
+      font-family: "Expletus Sans", sans-serif;
     }
 
     .cta-button:hover, 
@@ -140,7 +144,9 @@
       }
 
       .hero {
-        padding: 2rem;
+        justify-content: center;
+        padding: 2rem 1rem;
+        margin-top: 0;
       }
 
       .hero-title {
@@ -182,7 +188,7 @@
 
     <section class="hero">
       <h1 class="hero-title">
-        I build <span>human-centered AI applications</span> that solve problems in real-word domains ranging from healthcare to workforce intelligence.
+        I build <span>human-centered AI applications</span> that solve problems in real-world domains ranging from healthcare to workforce intelligence.
       </h1>
       <p class="hero-subtitle">
        I work across research, product, and design to develop solutions that learn from deployment and distribute the benefits of AI, while ensuring that these powerful tools are used responsibly and safely.

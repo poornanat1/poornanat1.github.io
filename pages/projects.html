@@ -7,10 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Proza+Libre:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Boldonse&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/shared.css" />
 
@@ -33,6 +30,8 @@
       margin-bottom: 1.5rem;
       font-size: 1.5rem;
       font-weight: 500;
+      font-family: 'Boldonse', sans-serif;
+      color: #ffd86f;
     }
 
     nav ul {
@@ -44,6 +43,7 @@
     }
 
     nav a {
+      font-family: "Expletus Sans", sans-serif;
       font-size: 0.9rem;
       padding: 0.5rem;
     }
@@ -66,28 +66,45 @@
       flex-direction: column;
       max-width: 1200px;
       margin: 0 auto;
-      padding: 1rem 0 3rem;
+      padding: 0.5rem 0 4rem;
       width: 100%;
+      position: relative;
     }
 
     .section-heading {
+      font-family: "Expletus Sans", sans-serif;
       text-align: center;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       font-size: 1.8rem;
       font-weight: 500;
     }
 
     .projects-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
       width: 100%;
-      max-width: 500px;
+      max-width: none;
       margin: 0 auto;
+      overflow-x: auto;
+      overflow-y: hidden;
+      padding: 0.5rem 0;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .projects-container::-webkit-scrollbar {
+      display: none;
     }
 
     .project-card {
-      width: 100%;
+      min-width: auto;
+      width: 280px;
+      max-width: none;
+      scroll-snap-align: center;
+      flex-shrink: 0;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(6px);
       border-radius: 8px;
@@ -95,6 +112,7 @@
       overflow: hidden;
       transition: all 0.3s ease;
       border-left: 3px solid #ffd86f;
+      margin: 0 auto;
     }
 
     .project-card:hover, .project-card:active {
@@ -106,8 +124,10 @@
     .thumbnail {
       width: 100%;
       height: 200px;
-      background-size: cover;
+      background-size: contain;
       background-position: center;
+      background-repeat: no-repeat;
+      background-color: rgba(0, 0, 0, 0.2);
       border-radius: 5px 5px 0 0;
       border-bottom: 2px solid rgba(255, 216, 111, 0.5);
     }
@@ -117,15 +137,17 @@
     }
 
     .project-title {
-      font-size: 1.5rem;
-      font-weight: 500;
-      color: #ffd86f;
-      margin-bottom: 0.75rem;
+      font-family: "Expletus Sans", sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
     }
 
     .project-description {
-      font-size: 1.1rem;
-      line-height: 1.5;
+      font-family: "Expletus Sans", sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.4;
       color: rgba(255, 255, 255, 0.8);
     }
 
@@ -160,16 +182,26 @@
         padding: 0 2rem;
       }
       
-      .thumbnail {
-        height: 250px;
+      .project-card {
+        width: 600px;
+        min-width: 600px;
       }
       
-      .projects-container {
-        gap: 2.5rem;
+      .thumbnail {
+        height: 250px;
+        background-size: cover;
       }
       
       .project-info {
         padding: 1.75rem;
+      }
+      
+      .project-title {
+        font-size: 1.5rem;
+      }
+      
+      .project-description {
+        font-size: 1.1rem;
       }
     }
 
@@ -189,11 +221,28 @@
       .project-info {
         padding: 2rem;
       }
-      
-      .projects-container {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
+    }
+
+    .scroll-indicator {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      z-index: 10;
+    }
+
+    .scroll-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 216, 111, 0.3);
+      transition: background 0.3s ease;
+    }
+
+    .scroll-dot.active {
+      background: rgba(255, 216, 111, 1);
     }
   </style>
 </head>
@@ -228,17 +277,21 @@
           </a>
         </div>
         
-        <!--
         <div class="project-card">
-          <a href="#" target="_blank" class="project-link">
-            <div class="thumbnail" style="background-image: url('../images/project-placeholder.jpg');"></div>
+          <a href="https://ecoscape-globalization-viz.vercel.app/" target="_blank" class="project-link">
+            <div class="thumbnail" style="background-image: url('../images/ecoscape.png');"></div>
             <div class="project-info">
-              <h2 class="project-title">Project Name</h2>
-              <p class="project-description">Brief description of the project goes here.</p>
+              <h2 class="project-title">Ecoscape</h2>
+              <p class="project-description">[Desktop Only] Explore global temperature trends
+                through interactive visualization.</p>
             </div>
           </a>
         </div>
-        -->
+      </div>
+      
+      <div class="scroll-indicator">
+        <div class="scroll-dot active"></div>
+        <div class="scroll-dot"></div>
       </div>
     </div>
   </div>
@@ -246,7 +299,25 @@
   <script type="module">
     import { initPage } from '../js/shared.js';
     
-    document.addEventListener('DOMContentLoaded', initPage);
+    document.addEventListener('DOMContentLoaded', () => {
+      initPage();
+      initScrollIndicator();
+    });
+
+    function initScrollIndicator() {
+      const container = document.querySelector('.projects-container');
+      const dots = document.querySelectorAll('.scroll-dot');
+      
+      container.addEventListener('scroll', () => {
+        const scrollPosition = container.scrollLeft;
+        const cardWidth = container.querySelector('.project-card').offsetWidth;
+        const activeIndex = Math.round(scrollPosition / cardWidth);
+        
+        dots.forEach((dot, index) => {
+          dot.classList.toggle('active', index === activeIndex);
+        });
+      });
+    }
   </script>
 </body>
 </html>

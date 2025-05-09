@@ -7,8 +7,9 @@
   html, body {
     height: 100%;
     width: 100%;
-    font-family: 'Proza Libre', sans-serif;
-    font-weight: 300;
+    font-family: "Expletus Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     color: #fff;
     background: linear-gradient(-45deg, #db93c3, #7a8ccf, #8e7bbd, #bb70ca);
     overflow-x: hidden;
@@ -50,6 +51,7 @@
   }
   
   .logo {
+    font-family: 'Boldonse', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     letter-spacing: 1px;
@@ -64,6 +66,7 @@
   }
   
   nav a {
+    font-family: "Expletus Sans", sans-serif;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
     font-size: 1rem;
