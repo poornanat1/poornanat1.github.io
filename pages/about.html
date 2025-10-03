@@ -1,379 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About - Poorna Natarajan</title>
+  <title>About Me - Poorna Natarajan</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Boldonse&display=swap"
-    rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Boldonse&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/shared.css" />
 
   <style>
-    body {
-      font-family: "Expletus Sans", sans-serif;
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-    }
+    body { overflow-x: hidden; margin: 0; padding: 0; }
+    header { padding: 2rem 1rem 1.5rem; display: flex; flex-direction: column; align-items: center; width: 100%; }
+    .logo { margin-bottom: 1.5rem; font-size: 1.5rem; font-weight: 500; font-family: 'Boldonse', sans-serif; color: #ffd86f; }
+    nav ul { display: flex; gap: 1.5rem; padding: 0; margin: 0; list-style: none; }
+    nav a { font-size: 0.9rem; padding: 0.5rem; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; padding-top: 1rem; box-sizing: border-box; }
 
-    header {
-      padding: 2rem 1rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-    }
-
-    .active-page {
-      color: #ffd86f;
-      cursor: default;
-      pointer-events: none;
-    }
-
-    .logo {
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-      font-weight: 500;
-      font-family: 'Boldonse', sans-serif;
-      color: #ffd86f;
-    }
-
-    nav ul {
-      display: flex;
-      gap: 1.5rem;
-      padding: 0;
-      margin: 0;
-      list-style: none;
-    }
-
-    nav a {
-      font-family: "Expletus Sans", sans-serif;
-      font-size: 0.9rem;
-      padding: 0.5rem;
-    }
-
-    .container {
-      width: 100%;
-      padding: 0 1rem;
-      padding-top: 1rem;
-    }
-
-    .about-section {
-      display: flex;
-      flex-direction: column;
-      gap: 2.5rem;
-      padding: 1rem 0 3rem;
-      width: 100%;
-    }
-
-    .hobbies-container {
-      position: relative;
-      padding: 0;
-      order: 2;
-    }
-
-    .content-container {
-      display: flex;
-      flex-direction: column;
-      padding: 0;
-      order: 1;
-    }
-
-    .contact-container {
-      order: 3;
-    }
-
-    .profile-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2rem;
-      gap: 1rem;
-      text-align: center;
-    }
-
-    .section-heading {
-      font-family: "Expletus Sans", sans-serif;
-      margin-top: 0.5rem;
-      font-size: 1.8rem;
-      font-weight: 500;
-    }
-
-    .about-text {
-      font-family: "Expletus Sans", sans-serif;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.8);
-      margin-bottom: 1.5rem;
-    }
-
-    .about-text li {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1rem;
-      list-style: none;
-    }
-
-    .about-text li::before {
-      content: "•";
-      position: absolute;
-      left: 1rem;
-      color: #ffd86f;
-    }
-
-    .subsection-heading {
-      font-family: "Expletus Sans", sans-serif;
-      font-size: 1.5rem;
-      font-weight: 500;
-      margin-bottom: 1.25rem;
-      margin-top: 1.5rem;
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    /* Hobby tiles styles */
-    .hobby-tiles {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-      width: 100%;
-    }
-
-    .hobby-tile {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(5px);
-      border-radius: 8px;
-      border-left: 3px solid #ffd86f;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
-
-    .hobby-tile:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .hobby-content {
-      padding: 1.5rem;
-      text-align: center;
-    }
-
-    .hobby-icon {
-      font-size: 2.5rem;
-      color: #ffd86f;
-      margin-bottom: 1rem;
-    }
-
-    .hobby-title {
-      font-family: "Expletus Sans", sans-serif;
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #ffd86f;
-      margin-bottom: 0.75rem;
-    }
-
-    .coming-soon {
-      display: inline-block;
-      background: rgba(255, 216, 111, 0.2);
-      color: #ffd86f;
-      font-size: 1rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: 20px;
-      margin-bottom: 1rem;
-    }
-
-    .hobby-description {
-      font-family: "Expletus Sans", sans-serif;
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.8);
-      line-height: 1.5;
-    }
-
-    .looking-for {
-      margin-bottom: 1.5rem;
-    }
-
-    .contact-note {
-      font-family: "Expletus Sans", sans-serif;
-      font-size: 1rem;
-      font-style: italic;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .email-link {
-      color: #ffd86f;
-      text-decoration: none;
-      transition: all 0.3s ease;
-    }
-
-    .email-link:hover,
-    .email-link:active {
-      text-decoration: underline;
-      text-shadow: 0 0 5px rgba(255, 216, 111, 0.5);
-    }
-
-    .highlight {
-      color: #ffd86f;
-      font-weight: 500;
-    }
+    .content { max-width: 1200px; margin: 0 auto; padding: 0 0 4rem; }
+    .hero-title { font-family: "Expletus Sans", sans-serif; font-size: 2.2rem; line-height: 1.25; color: rgba(255,255,255,.98); margin: 0 0 0.75rem 0; }
+    .accent { display: inline-block; height: 4px; width: 80px; background: linear-gradient(90deg, #ffd86f, rgba(255,216,111,.2)); border-radius: 4px; margin-bottom: 1.25rem; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+    .lead { font-family: "Expletus Sans", sans-serif; font-size: 1.15rem; line-height: 1.8; color: rgba(255,255,255,.92); margin: 0 0 1rem 0; }
+    .prose p { font-family: "Expletus Sans", sans-serif; font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,.9); margin: 0 0 1rem 0; }
+    .quote { position: relative; margin: 1.25rem 0; padding: 1rem 1.25rem 1rem 1rem; background: rgba(255,255,255,.08); border-left: 3px solid #ffd86f; border-radius: 8px; }
+    .quote p { margin: 0; color: rgba(255,255,255,.92); }
+    .sidebar { background: none; backdrop-filter: none; border-left: none; border-radius: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+    .avatar { width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,216,111,.6); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
 
     @media (min-width: 768px) {
-      header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 2.5rem 2rem;
-      }
-
-      .logo {
-        margin-bottom: 0;
-        font-size: 1.8rem;
-      }
-
-      nav ul {
-        gap: 2rem;
-      }
-
-      nav a {
-        font-size: 1rem;
-      }
-
-      .container {
-        padding: 0 2rem;
-      }
-
-      .profile-section {
-        flex-direction: row;
-        align-items: center;
-        text-align: left;
-        gap: 1.5rem;
-      }
-
-      .about-text {
-        font-size: 1.15rem;
-      }
-
-      .hobby-tiles {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .about-section {
-        display: grid;
-        grid-template-columns: 450px 1fr;
-        gap: 3rem;
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .hobbies-container {
-        order: 1;
-        padding-right: 1rem;
-      }
-
-      .content-container {
-        order: 2;
-        padding-left: 1rem;
-      }
-
-      .contact-container {
-        order: 3;
-        grid-column: 2;
-        text-align: center;
-      }
-
-      .about-text {
-        font-size: 1.2rem;
-      }
-
-      .subsection-heading {
-        font-size: 1.6rem;
-      }
+      header { flex-direction: row; justify-content: space-between; padding: 2.5rem 2rem; }
+      .logo { margin-bottom: 0; font-size: 1.8rem; }
+      nav ul { gap: 2rem; }
+      nav a { font-size: 1rem; }
+      .container { padding: 0 2rem; }
+      .hero-title { font-size: 2.6rem; }
+      .grid { grid-template-columns: 2fr 1fr; gap: 2rem; }
+      .avatar { width: 300px; height: 300px; }
     }
   </style>
 </head>
-
 <body>
-
   <canvas id="threejs-bg"></canvas>
-
   <div class="container">
     <header>
       <div class="logo">Poorna Natarajan</div>
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="resume.html">Resume</a></li>
-          <li><a href="projects.html">Projects</a></li>
+          <li><a href="experience.html">Experience</a></li>
           <li><a href="#" class="active-page">About</a></li>
         </ul>
       </nav>
     </header>
 
-    <div class="about-section">
-      <div class="hobbies-container">
-        <div style="text-align: center;">
-          <img src="../images/profile.jpg" alt="Poorna Natarajan"
-            style="width: 20rem; height: 20rem; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255, 216, 111, 0.7); box-shadow: 0 0 15px rgba(255, 216, 111, 0.5); margin: 0 auto 1.5rem; display: block;">
-        </div>
-        <div class="hobby-tiles">
-          <div class="hobby-tile" onclick="window.location.href='./photography.html'">
-            <div class="hobby-content">
-              <div class="hobby-icon">📷</div>
-              <h3 class="hobby-title">Photography</h3>
-              <span class="coming-soon">Sample</span>
-              <p class="hobby-description">Exploring light and composition through street photography and landscapes.
-                Portfolio in development.</p>
-            </div>
-          </div>
-        </div>
+    <main class="content">
+      <div class="accent"></div>
+      <h1 class="hero-title">About Me</h1>
+
+      <div class="grid">
+        <section class="prose">
+          <p class="lead">I'm a Senior Machine Learning Engineer at <span class="highlight">Latham &amp; Watkins</span>, where I design AI systems for complex legal work. I fine‑tune open‑source language models and build retrieval‑augmented generation platforms with a focus on transparency, accountability, and reliability.</p>
+          <p>My path began in the White House mailroom, selecting letters for President Obama. Since then, I’ve led pandemic data reporting for federal agencies, built semantic search tools for military policy, and deployed AI in high‑stakes environments. Across each role, I’ve seen that technology is only as effective as the context and governance behind it.</p>
+          <div class="quote"><p>Good AI is not just accurate—it is accountable. Judgment, interpretation, and governance remain fundamentally human, and great systems make space for them.</p></div>
+          <p>At Palantir, I helped reduce job‑classification timelines from months to minutes and built search pipelines that brought order to ambiguous policy. Earlier, at Deloitte, I led COVID‑19 reporting for federal leadership and learned first‑hand how fragile data pipelines can shape public outcomes.</p>
+          <p>Today, my work lives at the intersection of machine learning and public impact: building systems that are rigorous and scalable while embedding safeguards that make them equitable and trustworthy.</p>
+        </section>
+
+        <aside class="sidebar">
+          <img class="avatar" src="../images/profile.jpg" alt="Poorna Natarajan" />
+        </aside>
       </div>
-
-
-      <div class="content-container">
-        <div class="profile-section">
-          <h1 class="section-heading">About Me</h1>
-        </div>
-      
-        <p class="about-text">
-          I'm a software engineer with experience in <span class="highlight">backend development</span>, <span class="highlight">data infrastructure</span>, and <span class="highlight">applied machine learning</span>. I've contributed to projects at <span class="highlight">Palantir</span>, <span class="highlight">SMX</span>, and <span class="highlight">Deloitte</span> that support real-world operational workflows.
-        </p>
-      
-        <p class="about-text">
-          My work often involves bridging technical systems with practical needs. Some recent projects include:
-        </p>
-      
-        <ul class="about-text">
-          <li>Building a classification platform using <span class="highlight">RAG</span> (GPT-4o, LLaMA 3) to streamline government job processing</li>
-          <li>Developing a <span class="highlight">real-time Java application</span> for sensor fusion and computer vision</li>
-          <li>Designing <span class="highlight">MLOps pipelines</span> with Airflow and deploying serverless functions</li>
-          <li>Leading data ingestion and analytics efforts for <span class="highlight">COVID-19 response systems</span>, supporting coordination at the federal level</li>
-        </ul>
-      
-      </div>      
-
-      <div class="contact-container">
-        <p class="contact-note">
-          Thanks for visiting! Feel free to reach out at <a href="mailto:pnat614@gmail.com"
-            class="email-link">pnat614@gmail.com</a> if you'd like to connect.
-        </p>
-      </div>
-    </div>
+    </main>
   </div>
 
   <script type="module">
     import { initPage } from '../js/shared.js';
-    
     document.addEventListener('DOMContentLoaded', initPage);
   </script>
 </body>
-
 </html>
+

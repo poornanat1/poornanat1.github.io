@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience - Poorna Natarajan</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&family=Boldonse&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/shared.css" />
+
+  <style>
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 2rem 1rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+
+    .logo {
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 500;
+      font-family: 'Boldonse', sans-serif;
+      color: #ffd86f;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    nav a {
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+
+    .active-page {
+      color: #ffd86f;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      padding-top: 1rem;
+      box-sizing: border-box;
+    }
+
+    .exp-section {
+      padding: 1rem 0 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .exp-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      padding: 1.6rem 0 2.2rem;
+      position: relative;
+    }
+
+    /* Decorative dotted divider */
+    .exp-row::after {
+      content: "";
+      display: block;
+      height: 8px;
+      width: 100%;
+      background-image: radial-gradient(#ffd86f 2px, rgba(0,0,0,0) 2px);
+      background-size: 12px 8px;
+      background-repeat: repeat-x;
+      background-position: left center;
+      opacity: 0.7;
+      margin-top: 0.6rem;
+    }
+
+    .exp-row:last-child::after { display: none; }
+
+    .exp-left h2 {
+      font-family: "Expletus Sans", sans-serif;
+      font-weight: 500;
+      margin: 0 0 0.75rem 0;
+      font-size: 1.6rem;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .exp-left .dates {
+      font-family: "Expletus Sans", sans-serif;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .exp-right {
+      font-family: "Expletus Sans", sans-serif;
+      font-size: 1rem;
+      line-height: 1.75;
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .highlight { color: #ffd86f; }
+
+    .education-note {
+      text-align: center;
+      margin-top: 3rem;
+      font-family: "Expletus Sans", sans-serif;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 1.05rem;
+    }
+
+    @media (min-width: 768px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 2.5rem 2rem;
+      }
+
+      .logo {
+        margin-bottom: 0;
+        font-size: 1.8rem;
+      }
+
+      nav ul { gap: 2rem; }
+      nav a { font-size: 1rem; }
+
+      .container { padding: 0 2rem; }
+
+      /* Centered section with consistent horizontal padding */
+      .exp-section { padding-left: 2rem; padding-right: 2rem; }
+
+      .exp-row {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 2.5rem;
+        padding: 2rem 0;
+      }
+
+      .exp-left h2 { font-size: 2rem; }
+      .exp-right { font-size: 1.05rem; line-height: 1.75; text-align: right; }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="threejs-bg"></canvas>
+  <div class="container">
+    <header>
+      <div class="logo">Poorna Natarajan</div>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#" class="active-page">Experience</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="exp-section">
+      <div class="exp-row">
+        <div class="exp-left">
+          <h2><span class="highlight">Latham &amp; Watkins</span> — Senior Machine Learning Engineer</h2>
+          <div class="dates">June 2025 – Present</div>
+        </div>
+        <div class="exp-right">
+          Fine‑tune open‑source language models for legal domain adaptation and specialized tasks, and engineer an enterprise RAG platform with hybrid retrieval to automate high‑stakes client analyses in AI and privacy.
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-left">
+          <h2><span class="highlight">Palantir Technologies</span> — Deployment Strategist</h2>
+          <div class="dates">March 2024 – February 2025</div>
+        </div>
+        <div class="exp-right">
+          Cut Air Force job classification from months to under an hour and improved platform reliability by leading 0→1 AI platforms; also shipped a contracting CRM and a real‑time drone‑detection model.
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-left">
+          <h2><span class="highlight">SMX</span> — Machine Learning Engineer</h2>
+          <div class="dates">March 2022 – March 2024</div>
+        </div>
+        <div class="exp-right">
+          Reduced inference latency by 18% and achieved 92% F1 entity extraction by building robust data pipelines and ML services; delivered production APIs for analytics and led a small research team to ship results.
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-left">
+          <h2><span class="highlight">Deloitte</span> — Senior Consultant</h2>
+          <div class="dates">June 2019 – March 2022</div>
+        </div>
+        <div class="exp-right">
+          Won a key Air Force contract with a geospatial analytics tool; led COVID‑19 operations reporting for federal leaders; established scalable data‑engineering standards while co‑leading a 200+ person data community.
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-left">
+          <h2><span class="highlight">Booz Allen Hamilton</span> — Consultant</h2>
+          <div class="dates">June 2018 – June 2019</div>
+        </div>
+        <div class="exp-right">
+          Extracted KPIs from clinical notes and launched forecasting that monitored performance across 600+ clinics.
+        </div>
+      </div>
+
+      <div class="education-note">
+        M.S. in Computer Science — <span class="highlight">Georgia Tech</span> (2022–2025) · B.S. Bioengineering & B.A. Economics — <span class="highlight">University of Maryland</span>
+      </div>
+    </section>
+  </div>
+
+  <script type="module">
+    import { initPage } from '../js/shared.js';
+    document.addEventListener('DOMContentLoaded', initPage);
+  </script>
+</body>
+
+</html>
+

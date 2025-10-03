@@ -91,6 +91,14 @@
       color: rgba(255, 255, 255, 0.7);
     }
 
+    .divider {
+      width: 100%;
+      height: 1px;
+      margin: 1.5rem 0;
+      background: linear-gradient(90deg, rgba(255,255,255,.12), rgba(255,255,255,.35), rgba(255,255,255,.12));
+      border-radius: 1px;
+    }
+
     .cta-button {
       display: inline-block;
       background-color: rgba(255, 216, 111, 0.55);
@@ -110,6 +118,25 @@
       font-family: "Expletus Sans", sans-serif;
     }
 
+    .cta-icon {
+      width: 56px;
+      height: 56px;
+      padding: 0;
+      border-radius: 10px; /* square button */
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+    }
+
+    .cta-icon:hover, .cta-icon:active {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.35);
+      background-color: rgba(255, 216, 111, 0.7);
+    }
+
+    .cta-icon svg { width: 22px; height: 22px; display: block; }
+
     .cta-button:hover, 
     .cta-button:active {
       background-color: rgba(255, 255, 255, 0.2);
@@ -120,6 +147,8 @@
 
     .container {
       width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 0 1rem;
     }
 
@@ -179,8 +208,7 @@
       <nav>
         <ul>
           <li><a href="#" class="active-page">Home</a></li>
-          <li><a href="pages/resume.html">Resume</a></li>
-          <li><a href="pages/projects.html">Projects</a></li>
+          <li><a href="pages/experience.html">Experience</a></li>
           <li><a href="pages/about.html">About</a></li>
         </ul>
       </nav>
@@ -188,12 +216,17 @@
 
     <section class="hero">
       <h1 class="hero-title">
-        I build <span>human-centered AI applications</span> that solve problems in real-world domains ranging from healthcare to workforce intelligence.
+        I'm a <span>Machine Learning Engineer</span> who builds human‑centered AI systems used in the real world.
       </h1>
       <p class="hero-subtitle">
-       I work across research, product, and design to develop solutions that learn from deployment and distribute the benefits of AI, while ensuring that these powerful tools are used responsibly and safely.
+        I design, fine‑tune, and deploy models and retrieval systems that deliver measurable impact—privacy‑respecting and safe by default.
       </p>
-      <a href="https://www.linkedin.com/in/poorna-natarajan/" class="cta-button">Let's Connect</a>
+      <div class="divider"></div>
+      <a href="https://www.linkedin.com/in/poorna-natarajan/" class="cta-button cta-icon" aria-label="LinkedIn profile" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.8v2h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V23h-4v-5.9c0-1.4-.03-3.2-1.95-3.2-1.95 0-2.25 1.52-2.25 3.1V23h-4V8.5z"/>
+        </svg>
+      </a>
     </section>
   </div>
 
