@@ -92,7 +92,12 @@ export default function App() {
             </h2>
 
             {/* Photo */}
-            <div style={{ marginTop: '2rem', marginBottom: '2rem' }}>
+            <div style={{
+              marginTop: '2rem',
+              marginBottom: '2rem',
+              backgroundColor: 'rgba(255,255,255,0.2)',
+              padding: '1rem'
+            }}>
               <img
                 src={headshot}
                 alt="Poorna Natarajan"
@@ -101,13 +106,18 @@ export default function App() {
                   maxWidth: '280px',
                   height: 'auto',
                   objectFit: 'cover',
-                  display: 'block'
+                  display: 'block',
+                  border: '2px solid #000'
                 }}
               />
             </div>
 
             {/* Bio */}
-            <div style={{ marginBottom: '1rem' }}>
+            <div style={{
+              marginBottom: '1rem',
+              backgroundColor: 'rgba(255,255,255,0.2)',
+              padding: '1rem'
+            }}>
               <p
                 style={{
                   fontFamily: 'Inter, sans-serif',
@@ -115,7 +125,9 @@ export default function App() {
                   color: '#000',
                   lineHeight: '1.6',
                   fontWeight: '400',
-                  marginBottom: '0'
+                  marginBottom: '0',
+                  backgroundColor: 'white',
+                  padding: '0.5rem'
                 }}
               >
                 I ship AI systems end-to-end in regulated environments, translating technical trade-offs into defensible decisions.
@@ -131,7 +143,9 @@ export default function App() {
                     color: '#000',
                     textDecoration: 'underline',
                     fontWeight: '500',
-                    display: 'inline-block'
+                    display: 'inline-block',
+                    backgroundColor: 'white',
+                    padding: '0.5rem'
                   }}
                 >
                   Photography (past few years) →
