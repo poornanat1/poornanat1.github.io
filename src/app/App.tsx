@@ -17,6 +17,7 @@ export default function App() {
   }, []);
 
   const [isBioExpanded, setIsBioExpanded] = useState(false);
+  const [isSkillsExpanded, setIsSkillsExpanded] = useState(false);
 
   return (
     <div
@@ -440,18 +441,41 @@ export default function App() {
 
             {/* Skills Section */}
             <div className="mb-0">
-              <h3
-                style={{
-                  fontFamily: 'Inter, sans-serif',
-                  fontSize: '1.25rem',
-                  fontWeight: '900',
-                  color: '#000',
-                  marginBottom: '0.75rem'
-                }}
-              >
-                Skills
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-3">
+              <div className="flex justify-between items-center mb-3">
+                <h3
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '1.25rem',
+                    fontWeight: '900',
+                    color: '#000',
+                    marginBottom: '0'
+                  }}
+                >
+                  Skills
+                </h3>
+                <button
+                  onClick={() => setIsSkillsExpanded(!isSkillsExpanded)}
+                  className="md:hidden"
+                  style={{
+                    fontFamily: 'Inter, sans-serif',
+                    fontSize: '0.875rem',
+                    color: '#000',
+                    fontWeight: '700',
+                    background: 'none',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer',
+                    width: '20px',
+                    height: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  {isSkillsExpanded ? '−' : '+'}
+                </button>
+              </div>
+              <div className={`grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-3 ${!isSkillsExpanded ? 'hidden md:grid' : ''}`}>
                 <div>
                   <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8125rem', fontWeight: '700', color: '#000', marginBottom: '0.25rem' }}>
                     Machine Learning & GenAI
@@ -471,6 +495,7 @@ export default function App() {
                   </div>
                   <div style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8125rem', fontWeight: '400', color: '#000', lineHeight: '1.5' }}>
                     Python<br />
+                    C++<br />
                     FastAPI<br />
                     Airflow<br />
                     PostgreSQL<br />
