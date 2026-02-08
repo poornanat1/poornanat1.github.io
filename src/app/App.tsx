@@ -92,7 +92,7 @@ export default function App() {
             </h2>
 
             {/* Photo */}
-            <div className="mt-8 mb-8">
+            <div style={{ marginTop: '2rem', marginBottom: '2rem' }}>
               <img
                 src={headshot}
                 alt="Poorna Natarajan"
@@ -100,36 +100,38 @@ export default function App() {
                   width: '100%',
                   maxWidth: '280px',
                   height: 'auto',
-                  objectFit: 'cover'
+                  objectFit: 'cover',
+                  display: 'block'
                 }}
               />
             </div>
 
             {/* Bio */}
-            <div>
+            <div style={{ marginBottom: '1rem' }}>
               <p
                 style={{
                   fontFamily: 'Inter, sans-serif',
                   fontSize: '0.875rem',
                   color: '#000',
                   lineHeight: '1.6',
-                  fontWeight: '400'
+                  fontWeight: '400',
+                  marginBottom: '0'
                 }}
               >
                 I ship AI systems end-to-end in regulated environments, translating technical trade-offs into defensible decisions.
               </p>
 
               {/* Photography Button */}
-              <div className="mt-4">
+              <div style={{ marginTop: '1rem' }}>
                 <a
                   href="/photos.html"
-                  className="hover:opacity-70 transition-opacity"
                   style={{
                     fontFamily: 'Inter, sans-serif',
                     fontSize: '0.875rem',
                     color: '#000',
                     textDecoration: 'underline',
-                    fontWeight: '500'
+                    fontWeight: '500',
+                    display: 'inline-block'
                   }}
                 >
                   Photography (past few years) →
