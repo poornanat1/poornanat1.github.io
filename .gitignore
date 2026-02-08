@@ -1,15 +1,8 @@
 .DS_Store
 images/.DS_Store
-.github/workflows/deploy.yml
-ATTRIBUTIONS.md
 dist/
 guidelines/
 index copy.html
 node_modules/
 package-lock.json
-package.json
-postcss.config.mjs
-src/
-vite.config.ts
-README.md
 index-1.html
