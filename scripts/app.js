@@ -1,6 +1,6 @@
 const projects = document.querySelector('#projects');
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const externalLink = link => `<a href="${escapeHTML(link.url)}">${escapeHTML(link.label)} ↗</a>`;
+const externalLink = link => `<a href="${escapeHTML(link.url)}">${escapeHTML(link.label)} <svg class="link-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false"><path d="M3 21 21 3M12 3h9v9"/></svg></a>`;
 async function loadPortfolio(){
  const response = await fetch('data/portfolio.json');
  if(!response.ok) throw new Error('Content unavailable');
