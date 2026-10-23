@@ -1,0 +1,117 @@
+{
+  "projects": [
+    {
+      "title": "Healthcare Navigator",
+      "category": "Applied AI",
+      "status": "",
+      "tags": [
+        "Grounded LLMs",
+        "Privacy",
+        "Model routing",
+        "Evaluation"
+      ],
+      "description": [
+        "Built a healthcare question-answering application centered on grounded responses, privacy safeguards, and human escalation. Answers require source citations; the system also redacts protected health information and supports handoff to a person when needed.",
+        "Requests are routed across model cost tiers to balance inference cost and answer quality. An evaluation suite checks response quality and provides a way to assess reliability as the application evolves."
+      ],
+      "links": [
+        {
+          "label": "View repository",
+          "url": "https://github.com/poornanat1/carenav"
+        }
+      ],
+      "image": "assets/project-1.png"
+    },
+    {
+      "title": "Audition With Me",
+      "category": "Product engineering",
+      "status": "",
+      "tags": [
+        "AI rehearsal",
+        "Speech tracking",
+        "ElevenLabs",
+        "TypeScript"
+      ],
+      "description": [
+        "An AI-powered rehearsal partner for actors. The application turns scripts into interactive scenes with voice-powered scene partners, so performers can practice their lines independently.",
+        "As a major product and engineering contributor, built guided rehearsal experiences with role selection, voice casting, live speech tracking, and teleprompter playback. Developed parsing for typed, scanned, bilingual, and annotated scripts; integrated contextual ElevenLabs voice delivery, caching, and persistent casting; and led a cinematic, responsive interface redesign."
+      ],
+      "links": [
+        {
+          "label": "Live site",
+          "url": "https://auditionwithme.com"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/cranberrymuffin/auditionwithme"
+        }
+      ],
+      "image": "assets/project-2.png"
+    },
+    {
+      "title": "Podcast Search Engine",
+      "category": "Information retrieval",
+      "status": "In progress",
+      "tags": [
+        "Hybrid retrieval",
+        "Two-tower models",
+        "Hard negatives",
+        "ONNX"
+      ],
+      "description": [
+        "Building a search engine for more than 800,000 podcast episodes. The retrieval pipeline combines keyword and vector search to find candidates, then reranks results to improve relevance.",
+        "A two-tower model learns query and episode representations using hard-negative examples to distinguish closely related results. ONNX-based serving targets end-to-end latency under 500 ms."
+      ],
+      "links": [],
+      "image": null
+    },
+    {
+      "title": "GEPA in DSpyNet",
+      "category": "Open source",
+      "status": "",
+      "tags": [
+        "Open source",
+        "C# / .NET",
+        "DSPy",
+        "Prompt optimization"
+      ],
+      "description": [
+        "Implemented GEPA in DSpyNet, the open-source .NET port of Stanford's DSPy framework. The contribution adds feedback-driven prompt optimization to help language-model programs improve their instructions through evaluation rather than manual prompt editing alone.",
+        "The optimization process uses feedback from model outputs to generate and refine candidate prompts, extending the framework's tools for iterative LLM development."
+      ],
+      "links": [
+        {
+          "label": "View repository",
+          "url": "https://github.com/al322se/DSpyNet"
+        }
+      ],
+      "image": null
+    }
+  ],
+  "experience": [
+    {
+      "date": "2025 \u2014 now",
+      "company": "Latham & Watkins",
+      "role": "Senior Machine Learning Engineer",
+      "description": "Building enterprise search and contract intelligence platforms from the ground up, including document parsing, structured extraction, citation verification, and human review workflows."
+    },
+    {
+      "date": "2024 \u2014 2025",
+      "company": "Palantir Technologies",
+      "role": "Deployment Strategist",
+      "description": "Built and deployed AI systems for mission-critical government and defense applications, including an LLM-based workforce classification platform and real-time radar/camera sensor fusion for drone tracking."
+    },
+    {
+      "date": "2022 \u2014 2024",
+      "company": "SMX",
+      "role": "Machine Learning Engineer",
+      "description": "Built LLM extraction and translation services deployed on Kubernetes/OpenShift in secure government environments. Developed validated, monitored data pipelines to support ongoing model retraining."
+    },
+    {
+      "date": "2019 \u2014 2022",
+      "company": "Deloitte Consulting",
+      "role": "Senior Consultant",
+      "description": "Processed COVID-19 lab testing data for the CDC Emergency Operations Center and built data products used in briefings to CDC leadership and the White House Task Force. Co-led a 200+ member Spark community, developing reusable tools and training analytics practitioners."
+    }
+  ]
+}
