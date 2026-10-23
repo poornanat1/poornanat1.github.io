@@ -6,4 +6,5 @@
 @media print{.site-header,.skip{display:none}.wrap{width:100%}.intro{padding-top:0}.project,.timeline-entry{break-inside:avoid}.content-section{grid-template-columns:130px 1fr}.project-detail{display:block!important}.section-content{padding-bottom:20px}footer{margin-top:20px}}
 
 /* Draw link arrows as strokes so mobile platforms cannot substitute emoji. */
-.link-arrow{display:inline-block;width:1em;height:1em;vertical-align:-.12em;overflow:visible;flex-shrink:0}
+a:has(>.link-arrow){display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.link-arrow{display:inline-block;width:12px;height:12px;max-width:12px;max-height:12px;vertical-align:middle;overflow:hidden;flex:0 0 12px}
