@@ -51,7 +51,7 @@
     {
       "title": "Podcast Search Engine",
       "category": "Information retrieval",
-      "status": "In progress",
+      "status": "Complete",
       "tags": [
         "Hybrid retrieval",
         "Two-tower models",
@@ -59,10 +59,15 @@
         "ONNX"
       ],
       "description": [
-        "Building a search engine for more than 800,000 podcast episodes. The retrieval pipeline combines keyword and vector search to find candidates, then reranks results to improve relevance.",
-        "A two-tower model learns query and episode representations using hard-negative examples to distinguish closely related results. ONNX-based serving targets end-to-end latency under 500 ms."
+        "Built and deployed Podfind, a podcast search engine for nearly 800,000 episodes. Listeners can search in natural language and refine results by language, episode length, publication date, and explicit content.",
+        "The retrieval pipeline combines keyword and vector search, then reranks candidates for relevance. The interface shows how queries are interpreted, explains why episodes match, and supports episode playback and discovery of similar episodes."
       ],
-      "links": [],
+      "links": [
+        {
+          "label": "Live site",
+          "url": "https://api-production-0ff59.up.railway.app/"
+        }
+      ],
       "image": null
     },
     {
