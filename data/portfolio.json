@@ -51,7 +51,7 @@
     {
       "title": "Podcast Search Engine",
       "category": "Information retrieval",
-      "status": "Complete",
+      "status": "",
       "tags": [
         "Hybrid retrieval",
         "Two-tower models",
@@ -68,7 +68,10 @@
           "url": "https://api-production-0ff59.up.railway.app/"
         }
       ],
-      "image": null
+      "image": "assets/project-3.png",
+      "imageAlt": "Podfind episode search with natural-language filters and ranked results",
+      "imageWidth": 1440,
+      "imageHeight": 1300
     },
     {
       "title": "GEPA in DSpyNet",
