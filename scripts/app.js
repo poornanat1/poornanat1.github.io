@@ -2,7 +2,7 @@ const projects = document.querySelector('#projects');
 const escapeHTML = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const externalLink = link => `<a href="${escapeHTML(link.url)}">${escapeHTML(link.label)} <svg class="link-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true" focusable="false"><path d="M3 21 21 3M12 3h9v9"/></svg></a>`;
 async function loadPortfolio(){
- const response = await fetch('data/portfolio.json');
+ const response = await fetch('data/portfolio.json', {cache: 'no-cache'});
  if(!response.ok) throw new Error('Content unavailable');
  const portfolio = await response.json();
  projects.innerHTML = portfolio.projects.map((p,i)=>`<details class="project"><summary><h3>${escapeHTML(p.title)}</h3><span class="project-area">${escapeHTML(p.category)}</span><span class="expand-icon" aria-hidden="true"></span></summary><div class="project-detail">${p.status?`<p class="project-status">${escapeHTML(p.status)}</p>`:''}${p.image?`<img class="project-image" src="${escapeHTML(p.image)}" alt="${p.imageAlt?escapeHTML(p.imageAlt):i===0?'CareNav synthetic demo with cited answers and source evidence':'Audition With Me script upload and rehearsal interface'}" width="${p.imageWidth||2048}" height="${p.imageHeight||1284}" loading="lazy">`:''}${p.description.map(d=>`<p>${escapeHTML(d)}</p>`).join('')}<p class="tags">${p.tags.map(escapeHTML).join(' · ')}</p><div class="project-links">${p.links.map(externalLink).join('')}</div></div></details>`).join('');
