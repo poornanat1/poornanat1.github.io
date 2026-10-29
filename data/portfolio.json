@@ -49,7 +49,7 @@
       "image": "assets/project-2.png"
     },
     {
-      "title": "Podcast Search Engine",
+      "title": "Podfind",
       "category": "Information retrieval",
       "status": "",
       "tags": [
@@ -66,12 +66,16 @@
         {
           "label": "Live site",
           "url": "https://api-production-0ff59.up.railway.app/"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/poornanat1/podcast-retrieval"
         }
       ],
       "image": "assets/project-3.png",
-      "imageAlt": "Podfind episode search with natural-language filters and ranked results",
+      "imageAlt": "Podfind natural-language podcast search interface",
       "imageWidth": 1440,
-      "imageHeight": 1300
+      "imageHeight": 900
     },
     {
       "title": "GEPA in DSpyNet",
